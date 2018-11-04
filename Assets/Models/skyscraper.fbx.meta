@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 659d7a569f8bbce4e921033d7477f488
+guid: d3adfa0c3c14ea346952cb6c1cd871c5
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,88 +8,77 @@ ModelImporter:
     100004: Cube.001
     100006: Cube.002
     100008: Cube.003
-    100010: Cylinder
-    100012: Cylinder.001
-    100014: Plane
-    100016: Plane.001
-    100018: Plane.002
-    100020: Plane.004
-    100022: //RootNode
-    100024: stairs
-    100026: Vert.000
-    100028: Vert.001
-    100030: Vert.002
-    100032: Vert.003
+    100010: Plane
+    100012: Plane.001
+    100014: Plane.002
+    100016: Plane.004
+    100018: //RootNode
+    100020: stairs
+    100022: Vert.000
+    100024: Vert.001
+    100026: Vert.002
+    100028: Vert.003
     400000: BezierCircle.001
     400002: Cube
     400004: Cube.001
     400006: Cube.002
     400008: Cube.003
-    400010: Cylinder
-    400012: Cylinder.001
-    400014: Plane
-    400016: Plane.001
-    400018: Plane.002
-    400020: Plane.004
-    400022: //RootNode
-    400024: stairs
-    400026: Vert.000
-    400028: Vert.001
-    400030: Vert.002
-    400032: Vert.003
+    400010: Plane
+    400012: Plane.001
+    400014: Plane.002
+    400016: Plane.004
+    400018: //RootNode
+    400020: stairs
+    400022: Vert.000
+    400024: Vert.001
+    400026: Vert.002
+    400028: Vert.003
     2100000: Beton
     2100002: steklo
-    2100004: Material
-    2100006: No Name
-    2100008: dark_beton
+    2100004: No Name
+    2100006: dark_beton
     2300000: BezierCircle.001
     2300002: Cube
     2300004: Cube.001
     2300006: Cube.002
     2300008: Cube.003
-    2300010: Cylinder
-    2300012: Cylinder.001
-    2300014: Plane
-    2300016: Plane.001
-    2300018: Plane.002
-    2300020: Plane.004
-    2300022: stairs
-    2300024: Vert.000
-    2300026: Vert.001
-    2300028: Vert.002
-    2300030: Vert.003
+    2300010: Plane
+    2300012: Plane.001
+    2300014: Plane.002
+    2300016: Plane.004
+    2300018: stairs
+    2300020: Vert.000
+    2300022: Vert.001
+    2300024: Vert.002
+    2300026: Vert.003
     3300000: BezierCircle.001
     3300002: Cube
     3300004: Cube.001
     3300006: Cube.002
     3300008: Cube.003
-    3300010: Cylinder
-    3300012: Cylinder.001
-    3300014: Plane
-    3300016: Plane.001
-    3300018: Plane.002
-    3300020: Plane.004
-    3300022: stairs
-    3300024: Vert.000
-    3300026: Vert.001
-    3300028: Vert.002
-    3300030: Vert.003
+    3300010: Plane
+    3300012: Plane.001
+    3300014: Plane.002
+    3300016: Plane.004
+    3300018: stairs
+    3300020: Vert.000
+    3300022: Vert.001
+    3300024: Vert.002
+    3300026: Vert.003
     4300000: Cube.003
-    4300002: Cylinder.001
-    4300004: Cylinder
-    4300006: BezierCircle.001
-    4300008: Plane.004
-    4300010: Plane.002
-    4300012: Vert.003
-    4300014: Vert.002
-    4300016: Vert.000
-    4300018: Plane.001
-    4300020: Vert.001
-    4300022: Cube.002
-    4300024: Cube.001
-    4300026: Plane
-    4300028: stairs
-    4300030: Cube
+    4300002: BezierCircle.001
+    4300004: Plane.004
+    4300006: Plane.002
+    4300008: Vert.003
+    4300010: Vert.002
+    4300012: Vert.000
+    4300014: Plane.001
+    4300016: Vert.001
+    4300018: Cube.002
+    4300020: Cube.001
+    4300022: Plane
+    4300024: stairs
+    4300026: Cube
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:

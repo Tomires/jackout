@@ -8,6 +8,10 @@ public class OculusTeleport : MonoBehaviour {
 	public GameObject pointer;
 	public float headHeight = 1.75f;
 
+	void Start() {
+		XRSettings.eyeTextureResolutionScale = 1.5f;
+	}
+
 	void Update () {
 		RaycastHit hit;
 		if(Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity)) {

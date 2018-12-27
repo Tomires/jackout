@@ -37,5 +37,4 @@ sysinfo.txt
 
 # Addons
 Assets/ProCore*
-Assets/SteamVR*
-Assets/Oculus*
+Assets/HoloToolkit*

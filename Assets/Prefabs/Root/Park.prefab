@@ -22541,14 +22541,14 @@ MonoBehaviour:
   m_selectedFaces: 00000000
   m_SelectedEdges:
   - x: 0
+    y: 1
+  - x: 2
     y: 0
-  - x: 0
-    y: 0
-  - x: 0
-    y: 0
-  - x: 0
-    y: 0
-  m_selectedTriangles: 000000000000000000000000000000000000000000000000
+  - x: 1
+    y: 3
+  - x: 3
+    y: 2
+  m_selectedTriangles: 000000000100000002000000010000000300000002000000
 --- !u!114 &114989250687653772
 MonoBehaviour:
   m_ObjectHideFlags: 1

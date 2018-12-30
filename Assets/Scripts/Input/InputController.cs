@@ -32,8 +32,6 @@ namespace Jackout.Input {
 				actionTeleportation = true;
 			}
 
-			if(controllerHand == ControllerHand.RightController) actionTeleportation = true;
-
 			if(actionTeleportation) {
 				teleportationController.InitiateTeleport();
 				teleportInitiated = true;

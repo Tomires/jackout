@@ -44,8 +44,9 @@ GameObject:
   - component: {fileID: 33599159637487180}
   - component: {fileID: 114472352783829608}
   - component: {fileID: 64728417374005352}
+  - component: {fileID: 114768885671452094}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: LightActive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +125,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1916922286903262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: 2, z: -8}
+  m_LocalPosition: {x: 0.020000001, y: 0.86600006, z: -10.27}
   m_LocalScale: {x: 2, y: 0.2, z: 0.25}
   m_Children:
   - {fileID: 4169053758425786}
@@ -939,9 +940,17 @@ MonoBehaviour:
     areaError: 15
   asset_guid: 
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 
-  m_SelectedEdges: []
-  m_selectedTriangles: 
+  m_selectedFaces: 04000000
+  m_SelectedEdges:
+  - x: 16
+    y: 17
+  - x: 18
+    y: 16
+  - x: 17
+    y: 19
+  - x: 19
+    y: 18
+  m_selectedTriangles: 100000001100000012000000110000001300000012000000
 --- !u!114 &114469545979016410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1526,6 +1535,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 0
+--- !u!114 &114768885671452094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356461379757858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daefa1c835311ed4d8469f41ac01b0b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightOn: 1
+  onMaterial: {fileID: 2100000, guid: 5f11e5c806f5e3048b228eb9f38f5098, type: 2}
+  offMaterial: {fileID: 2100000, guid: b725d31bb387ce84798b9a1321b664db, type: 2}
 --- !u!114 &114822328241873300
 MonoBehaviour:
   m_ObjectHideFlags: 1

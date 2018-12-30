@@ -7,5 +7,9 @@ namespace Jackout {
 		public static float LerpSin(float step) {
 			return Mathf.Sin(step * Mathf.PI * 0.5f) * 0.5f;
 		}
+
+		public enum Axis {
+			X, Y, Z
+		}
 	}
 }

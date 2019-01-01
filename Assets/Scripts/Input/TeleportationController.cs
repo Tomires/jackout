@@ -7,6 +7,7 @@ namespace Jackout.Input {
 		public GameObject teleportationRing;
 		public GameObject cameraRig;
 		public string teleportLayerName = "TeleportBoundary";
+		public float shiftIncrement = 45.0f;
 		private Vector3 teleportTarget;
 		private bool warpingNow = false;
 		private float animationStep = 0f;
@@ -30,19 +31,13 @@ namespace Jackout.Input {
 		public void InitiateTeleport() {
 			Debug.Log("init");
 			RaycastHit hit;
-			if(Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity)) {
+			if(Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity) && isNormalGround(hit.normal, 5.0f)) {
 				if(!teleportationRing.activeInHierarchy)
 					teleportationRing.SetActive(true);
-				Debug.Log(hit.point);
+				//Debug.Log(hit.point);
 				teleportationRing.GetComponent<TeleportRingController>().MoveRing(hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
-				/*teleportationRing.transform.position = hit.point;
-				#teleportationRing.transform.rotation = Quaternion.FromToRotation(Vector3.forward, hit.normal);
-				#teleportationRing.transform.localPosition -= 0.025f * Vector3.Normalize(hit.point - transform.position);
-				teleportationRing.transform.localScale = Vector3.Distance(hit.point, transform.position) * 0.03f * Vector3.one;
-
-				/*if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) {
-					cameraRig.transform.position = teleportationRing.transform.position + new Vector3(0,headHeight,0);
-				}*/
+				Debug.Log(hit.normal);
+				
 				
 				bool teleportationAllowed = (hit.transform.gameObject.layer == LayerMask.NameToLayer(teleportLayerName));
 				teleportationRing.GetComponent<TeleportRingController>().SetAllowed(teleportationAllowed);
@@ -56,6 +51,21 @@ namespace Jackout.Input {
 		public void ConcludeTeleport() {
 			teleportationRing.SetActive(false);
 			warpingNow = true;
+		}
+
+		public void ShiftLeft() {
+			cameraRig.transform.rotation *= Quaternion.Euler(0, -shiftIncrement, 0);
+		}
+
+		public void ShiftRight() {
+			cameraRig.transform.rotation *= Quaternion.Euler(0, shiftIncrement, 0);
+		}
+
+		private bool isNormalGround(Vector3 normal, float margin) {
+			bool x = Shared.isInRange(Mathf.Abs(normal.x), 0.0f, margin);
+			bool y = Shared.isInRange(Mathf.Abs(normal.y), 0.0f, margin);
+			bool z = Shared.isInRange(Mathf.Abs(normal.z), 0.0f, margin);
+			return x && y && z;
 		}
 	}
 }

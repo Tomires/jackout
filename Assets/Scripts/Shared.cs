@@ -11,5 +11,14 @@ namespace Jackout {
 		public enum Axis {
 			X, Y, Z
 		}
+
+		public static bool isInRange(float value, float min, float max) {
+			if(value < min && value > max) {
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
 	}
 }

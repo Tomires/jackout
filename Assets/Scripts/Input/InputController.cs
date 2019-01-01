@@ -12,8 +12,10 @@ namespace Jackout.Input {
 
 		public Jackout.Input.TeleportationController teleportationController;
 		public ControllerHand controllerHand;
+		public float joystickThreshold = 0.6f;
 		private TBInput.Controller controller;
 		private bool teleportInitiated = false;
+		private bool shiftInitiated = false;
 
 		void Start () {
 			if(controllerHand == ControllerHand.LeftController) {
@@ -26,10 +28,30 @@ namespace Jackout.Input {
 
 		void Update () {
 			bool actionTeleportation = false;
-			/* trigger is pulled toward or away from player -> teleport */
+			bool shiftLeft = false;
+			bool shiftRight = false;
+			
+			/* joystick is pulled toward or away from player -> teleport */
 			Vector2 joystickPosition = TBInput.GetAxis2D(TBInput.Button.Joystick, controller);
-			if(Mathf.Abs(joystickPosition.y) > 0.6) {
+			if(Mathf.Abs(joystickPosition.y) > joystickThreshold) {
 				actionTeleportation = true;
+			}
+			/* joystick is pulled to the right -> blink shift to right */
+			else if(joystickPosition.x > joystickThreshold) {
+				if(!shiftInitiated) {
+					shiftRight = true;
+					shiftInitiated = true;
+				}
+			}
+			/* joystick is pulled to the left -> blink shift to left */
+			else if(joystickPosition.x < -joystickThreshold) {
+				if(!shiftInitiated) {
+					shiftLeft = true;
+					shiftInitiated = true;
+				}
+			}
+			else {
+				shiftInitiated = false;
 			}
 
 			if(actionTeleportation) {
@@ -39,6 +61,15 @@ namespace Jackout.Input {
 			else if(teleportInitiated) {
 				teleportationController.ConcludeTeleport();
 				teleportInitiated = false;
+			}
+
+			if(shiftLeft) {
+				teleportationController.ShiftLeft();
+				shiftLeft = false;
+			}
+			else if(shiftRight) {
+				teleportationController.ShiftRight();
+				shiftRight = false;
 			}
 		}
 	}

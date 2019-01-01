@@ -1,0 +1,8 @@
+newmtl New_Material
+Kd 0.07547168 0.07547168 0.07547168
+d 0.3764706
+
+newmtl DisplayPanel
+Kd 0 0 0
+d 1
+

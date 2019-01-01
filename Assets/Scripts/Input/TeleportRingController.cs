@@ -23,7 +23,7 @@ namespace Jackout.Input {
         }
 
 		public void SetAllowed(bool allowed) {
-			/*Material material;
+			Material material;
 			if(allowed) {
 				material = allowedMaterial;
 			}
@@ -33,7 +33,7 @@ namespace Jackout.Input {
 
 			foreach(Renderer r in GetComponentsInChildren<Renderer>()) {
 				r.material = material;
-			}*/
+			}
 		}
     }
 }

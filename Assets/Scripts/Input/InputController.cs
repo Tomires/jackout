@@ -16,6 +16,9 @@ namespace Jackout.Input {
 		private TBInput.Controller controller;
 		private bool teleportInitiated = false;
 		private bool shiftInitiated = false;
+		private bool grabPossible = false;
+		private bool objectGrabbed = false;
+		private GameObject grabbedObject;
 
 		void Start () {
 			if(controllerHand == ControllerHand.LeftController) {
@@ -27,10 +30,59 @@ namespace Jackout.Input {
 		}
 
 		void Update () {
-			bool actionTeleportation = false;
-			bool shiftLeft = false;
-			bool shiftRight = false;
-			
+			bool actionTeleportation, shiftLeft, shiftRight, actionInteract, actionRelease;
+			DetectInputs(out actionTeleportation, out shiftLeft, out shiftRight, out actionInteract, out actionRelease);
+
+			if(actionTeleportation) {
+				teleportationController.InitiateTeleport();
+				teleportInitiated = true;
+			}
+			else if(teleportInitiated) {
+				teleportationController.ConcludeTeleport();
+				teleportInitiated = false;
+			}
+
+			if(shiftLeft) {
+				teleportationController.ShiftLeft();
+				shiftLeft = false;
+			}
+			else if(shiftRight) {
+				teleportationController.ShiftRight();
+				shiftRight = false;
+			}
+
+			if(actionInteract && grabPossible && !objectGrabbed) {
+				grabbedObject.GetComponent<Interaction.ObjectGrabbable>().attachToController(gameObject);
+				GetComponent<MeshRenderer>().enabled = false;
+				objectGrabbed = true;
+			}
+			else if(actionRelease && objectGrabbed) {
+				grabbedObject.GetComponent<Interaction.ObjectGrabbable>().returnToInitialLocation();
+				GetComponent<MeshRenderer>().enabled = true;
+				objectGrabbed = false;
+			}
+
+		}
+
+		private void OnTriggerEnter(Collider col) {
+			if(col.gameObject.GetComponent<Interaction.ObjectGrabbable>() && !col.gameObject.GetComponent<Interaction.ObjectGrabbable>().grabbed) {
+				/* visual cue */
+				grabbedObject = col.gameObject;
+				grabPossible = true;
+			}
+		}
+
+		private void OnTriggerExit(Collider col) {
+			grabPossible = false;
+		}
+
+		private void DetectInputs(out bool actionTeleportation, out bool shiftLeft, out bool shiftRight, out bool actionInteract, out bool actionRelease) {
+			actionTeleportation = false;
+			shiftLeft = false;
+			shiftRight = false;
+			actionInteract = false;
+			actionRelease = false;
+
 			/* joystick is pulled toward or away from player -> teleport */
 			Vector2 joystickPosition = TBInput.GetAxis2D(TBInput.Button.Joystick, controller);
 			if(Mathf.Abs(joystickPosition.y) > joystickThreshold) {
@@ -54,22 +106,14 @@ namespace Jackout.Input {
 				shiftInitiated = false;
 			}
 
-			if(actionTeleportation) {
-				teleportationController.InitiateTeleport();
-				teleportInitiated = true;
+			/* trigger is pressed -> interact with object */
+			if(TBInput.GetButtonDown(TBInput.Button.PrimaryTrigger, controller)) {
+				actionInteract = true;
 			}
-			else if(teleportInitiated) {
-				teleportationController.ConcludeTeleport();
-				teleportInitiated = false;
-			}
-
-			if(shiftLeft) {
-				teleportationController.ShiftLeft();
-				shiftLeft = false;
-			}
-			else if(shiftRight) {
-				teleportationController.ShiftRight();
-				shiftRight = false;
+			
+			/* trigger is released -> release object */
+			if(TBInput.GetButtonUp(TBInput.Button.PrimaryTrigger, controller)) {
+				actionRelease = true;
 			}
 		}
 	}

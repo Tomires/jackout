@@ -208,6 +208,9 @@ GameObject:
   - component: {fileID: 4169313301855414}
   - component: {fileID: 33983081364337770}
   - component: {fileID: 23234323275034896}
+  - component: {fileID: 54733313083682540}
+  - component: {fileID: 65225104508580786}
+  - component: {fileID: 114781958889176440}
   m_Layer: 0
   m_Name: sunglasses
   m_TagString: Untagged
@@ -4884,6 +4887,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1128944287757898}
   m_Mesh: {fileID: 4300002, guid: 6ed38cec51eaf8f4d829b2e4ba1b707c, type: 3}
+--- !u!54 &54733313083682540
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128944287757898}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!64 &64006310468730138
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -5470,6 +5488,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 37.505, y: 1, z: 26.875}
   m_Center: {x: 18.2525, y: 0.000000029802322, z: 12.937494}
+--- !u!65 &65225104508580786
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128944287757898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0023147021, y: 0.0021812608, z: 0.0007046443}
+  m_Center: {x: -8.632766e-12, y: -0.000017266257, z: -0.0002317346}
 --- !u!114 &114000314838098466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21447,6 +21477,20 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114781958889176440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128944287757898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4d17ee2483937488f064db9d8bac28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabbed: 0
+  dopplegangerMaterial: {fileID: 2100000, guid: a535fa98713a3804697a5681243bed9c,
+    type: 2}
 --- !u!114 &114830984322494018
 MonoBehaviour:
   m_ObjectHideFlags: 1

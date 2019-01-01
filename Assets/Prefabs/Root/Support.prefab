@@ -291,7 +291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1685632384409272
 GameObject:
   m_ObjectHideFlags: 1
@@ -1387,7 +1387,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1968996928743632}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.04385121, y: 0.065548256, z: 0.12311349}
@@ -1411,7 +1411,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1277901146493650}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.04385121, y: 0.065548256, z: 0.12311349}
@@ -4555,6 +4555,7 @@ MonoBehaviour:
   controllerHand: 0
   joystickThreshold: 0.6
   triggerThreshold: 0.7
+  interactiveMaterial: {fileID: 2100000, guid: ac4f3f053e30e224a95dda33572bbd50, type: 2}
 --- !u!114 &114250750648952994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14296,3 +14297,4 @@ MonoBehaviour:
   controllerHand: 1
   joystickThreshold: 0.6
   triggerThreshold: 0.7
+  interactiveMaterial: {fileID: 2100000, guid: ac4f3f053e30e224a95dda33572bbd50, type: 2}

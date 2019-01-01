@@ -14,6 +14,8 @@ namespace Jackout.Input {
 		public ControllerHand controllerHand;
 		public float joystickThreshold = 0.6f;
 		public float triggerThreshold = 0.7f;
+		public Material interactiveMaterial;
+		private Material defaultMaterial;
 		private TBInput.Controller controller;
 		private bool teleportInitiated = false;
 		private bool shiftInitiated = false;
@@ -29,6 +31,8 @@ namespace Jackout.Input {
 			else {
 				controller = TBInput.Controller.RHandController;
 			}
+
+			defaultMaterial = GetComponent<Renderer>().material;
 		}
 
 		void Update () {
@@ -68,13 +72,14 @@ namespace Jackout.Input {
 
 		private void OnTriggerEnter(Collider col) {
 			if(col.gameObject.GetComponent<Interaction.ObjectGrabbable>() && !col.gameObject.GetComponent<Interaction.ObjectGrabbable>().grabbed) {
-				/* visual cue */
+				GetComponent<Renderer>().material = interactiveMaterial;
 				grabbedObject = col.gameObject;
 				grabPossible = true;
 			}
 		}
 
 		private void OnTriggerExit(Collider col) {
+			GetComponent<Renderer>().material = defaultMaterial;
 			grabPossible = false;
 		}
 

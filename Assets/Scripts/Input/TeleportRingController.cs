@@ -19,7 +19,7 @@ namespace Jackout.Input {
         public void MoveRing(Vector3 position, Quaternion rotation)
         {
 			transform.position = position;
-			transform.rotation = Quaternion.Euler(90,0,0) * rotation;
+			//transform.rotation = Quaternion.Euler(90,0,0) * rotation;
         }
 
 		public void SetAllowed(bool allowed) {

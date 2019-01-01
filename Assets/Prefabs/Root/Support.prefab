@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 33152726070918128}
   - component: {fileID: 114801115649423576}
   - component: {fileID: 64993194698044154}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BoundaryApartmentInside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 33494382062171358}
   - component: {fileID: 114453970514845628}
   - component: {fileID: 64282773578329060}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BoundaryStation2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 33653414856073542}
   - component: {fileID: 114788212856246196}
   - component: {fileID: 64624537756345820}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 33273383726742866}
   - component: {fileID: 114208920354396412}
   - component: {fileID: 64871883505255108}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BoundaryElevator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 114266926396555766}
   - component: {fileID: 64077950299507474}
   - component: {fileID: 114621451770084232}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TeleportRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -932,7 +932,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1685632384409272}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

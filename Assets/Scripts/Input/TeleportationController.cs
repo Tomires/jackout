@@ -9,6 +9,7 @@ namespace Jackout.Input {
 		public string teleportLayerName = "TeleportBoundary";
 		public float shiftIncrement = 45.0f;
 		private Vector3 teleportTarget;
+		private bool teleportationAllowed = true;
 		private bool warpingNow = false;
 		private float animationStep = 0f;
 		void Start () {
@@ -29,17 +30,19 @@ namespace Jackout.Input {
 		}
 
 		public void InitiateTeleport() {
-			Debug.Log("init");
+			if(warpingNow) {
+				return;
+			}
+
 			RaycastHit hit;
 			if(Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity) && isNormalGround(hit.normal, 5.0f)) {
-				if(!teleportationRing.activeInHierarchy)
+				if(!teleportationRing.activeInHierarchy) {
 					teleportationRing.SetActive(true);
-				//Debug.Log(hit.point);
+				}					
+
 				teleportationRing.GetComponent<TeleportRingController>().MoveRing(hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
-				Debug.Log(hit.normal);
 				
-				
-				bool teleportationAllowed = (hit.transform.gameObject.layer == LayerMask.NameToLayer(teleportLayerName));
+				teleportationAllowed = (hit.transform.gameObject.layer == LayerMask.NameToLayer(teleportLayerName));
 				teleportationRing.GetComponent<TeleportRingController>().SetAllowed(teleportationAllowed);
 				teleportTarget = hit.point;
 			}
@@ -50,6 +53,10 @@ namespace Jackout.Input {
 
 		public void ConcludeTeleport() {
 			teleportationRing.SetActive(false);
+
+			if(warpingNow || !teleportationAllowed) {
+				return;
+			}
 			warpingNow = true;
 		}
 
@@ -63,7 +70,7 @@ namespace Jackout.Input {
 
 		private bool isNormalGround(Vector3 normal, float margin) {
 			bool x = Shared.isInRange(Mathf.Abs(normal.x), 0.0f, margin);
-			bool y = Shared.isInRange(Mathf.Abs(normal.y), 0.0f, margin);
+			bool y = Shared.isInRange(Mathf.Abs(normal.y), 1.0f - margin, 1.0f);
 			bool z = Shared.isInRange(Mathf.Abs(normal.z), 0.0f, margin);
 			return x && y && z;
 		}

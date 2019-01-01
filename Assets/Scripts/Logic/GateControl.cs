@@ -5,22 +5,22 @@ using UnityEngine;
 namespace Jackout.Logic {
 	public class GateControl : MonoBehaviour {
 		public Vector3 openedOffset;
+		public float openingTime = 5.0f;
 		private bool gateOpened = false;
-		private float animationStep = 1.0f;
+		private float animationStep;
 		private Vector3 initialPosition;
 		private Vector3 target;
+		private Vector3 origin;
 
 		void Start () {
 			initialPosition = transform.position;
+			animationStep = openingTime;
 		}
 
 		void Update () {
-			if(animationStep < 1.0f) {
-				transform.position = Vector3.Lerp(transform.position, target, animationStep);
+			if(animationStep < openingTime) {
+				transform.position = Vector3.Lerp(origin, target, animationStep / openingTime);
 				animationStep += Time.deltaTime;
-			}
-			else {
-				Switch();
 			}
 		}
 
@@ -28,9 +28,13 @@ namespace Jackout.Logic {
 			gateOpened = !gateOpened;
 			animationStep = 0.0f;
 
-			target = initialPosition;
 			if(gateOpened) {
-				target += openedOffset;
+				target = initialPosition;
+				origin = initialPosition + openedOffset;
+			}
+			else {
+				target = initialPosition + openedOffset;
+				origin = initialPosition;
 			}
 		}
 	}

@@ -10654,6 +10654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openedOffset: {x: 0, y: 0, z: -3}
+  openingTime: 5
 --- !u!114 &114080634078516924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -30786,6 +30787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openedOffset: {x: 4.65, y: 0, z: 0}
+  openingTime: 5
 --- !u!212 &212005060317231196
 SpriteRenderer:
   m_ObjectHideFlags: 1

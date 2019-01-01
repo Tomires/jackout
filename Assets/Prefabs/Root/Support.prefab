@@ -4513,6 +4513,7 @@ MonoBehaviour:
   teleportationController: {fileID: 114716109731271430}
   controllerHand: 0
   joystickThreshold: 0.6
+  triggerThreshold: 0.7
 --- !u!114 &114250750648952994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14252,3 +14253,4 @@ MonoBehaviour:
   teleportationController: {fileID: 114470070726134438}
   controllerHand: 1
   joystickThreshold: 0.6
+  triggerThreshold: 0.7

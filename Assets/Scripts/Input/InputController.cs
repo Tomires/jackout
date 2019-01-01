@@ -13,12 +13,14 @@ namespace Jackout.Input {
 		public Jackout.Input.TeleportationController teleportationController;
 		public ControllerHand controllerHand;
 		public float joystickThreshold = 0.6f;
+		public float triggerThreshold = 0.7f;
 		private TBInput.Controller controller;
 		private bool teleportInitiated = false;
 		private bool shiftInitiated = false;
 		private bool grabPossible = false;
 		private bool objectGrabbed = false;
 		private GameObject grabbedObject;
+		private bool triggerPushed = false;
 
 		void Start () {
 			if(controllerHand == ControllerHand.LeftController) {
@@ -107,12 +109,16 @@ namespace Jackout.Input {
 			}
 
 			/* trigger is pressed -> interact with object */
-			if(TBInput.GetButtonDown(TBInput.Button.PrimaryTrigger, controller)) {
+			//if(TBInput.GetButtonDown(TBInput.Button.PrimaryTrigger, controller)) {
+			if(TBInput.GetAxis1D(TBInput.Button.PrimaryTrigger, controller) > triggerThreshold && !triggerPushed) {
+				triggerPushed = true;
 				actionInteract = true;
 			}
 			
 			/* trigger is released -> release object */
-			if(TBInput.GetButtonUp(TBInput.Button.PrimaryTrigger, controller)) {
+			//if(TBInput.GetButtonUp(TBInput.Button.PrimaryTrigger, controller)) {
+			if(TBInput.GetAxis1D(TBInput.Button.PrimaryTrigger, controller) < triggerThreshold && triggerPushed) {
+				triggerPushed = false;
 				actionRelease = true;
 			}
 		}

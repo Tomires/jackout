@@ -8,17 +8,11 @@ namespace Jackout.Input {
 
 		public Material allowedMaterial;
 		public Material deniedMaterial;
-
-		void Start () {
-		}
-		
-		void Update () {
-			
-		}
+		public Vector3 offset;
 
         public void MoveRing(Vector3 position, Quaternion rotation)
         {
-			transform.position = position;
+			transform.position = position + offset;
 			//transform.rotation = Quaternion.Euler(90,0,0) * rotation;
         }
 

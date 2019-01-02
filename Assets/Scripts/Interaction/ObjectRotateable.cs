@@ -48,7 +48,7 @@ namespace Jackout.Interaction {
 			inFeedback = true;
 			animationStep = 0.0f;
 
-			if(!rotationEnabled) {
+			if(!rotationEnabled && audioDenied != null) {
 				audioSource.clip = audioDenied;
 				audioSource.Play();
 			}
@@ -56,7 +56,7 @@ namespace Jackout.Interaction {
 				pivot = _pivot;
 				inRotation = true;
 
-				if(hinge.transform.rotation == hingeInitialRotation) {
+				if(hinge.transform.rotation == hingeInitialRotation && audioFromInitial != null) {
 					audioSource.clip = audioFromInitial;
 					audioSource.Play();
 				}
@@ -68,7 +68,7 @@ namespace Jackout.Interaction {
 			inFeedback = false;
 			animationStep = 0.0f;
 
-			if(hinge.transform.rotation == hingeInitialRotation) {
+			if(hinge.transform.rotation == hingeInitialRotation && audioToInitial != null) {
 				audioSource.clip = audioToInitial;
 				audioSource.Play();
 			}

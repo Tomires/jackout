@@ -14,9 +14,8 @@ namespace Jackout.Logic {
 			}
 		}
 		
-		public void Switch() {
-			lightOn = !lightOn;
-
+		public void Switch(bool on) {
+			lightOn = on;
 			Material material;
 			if(lightOn) {
 				material = offMaterial;

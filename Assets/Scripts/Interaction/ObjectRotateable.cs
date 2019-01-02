@@ -74,6 +74,15 @@ namespace Jackout.Interaction {
 			}
 		}
 
+		public void Enable() {
+			rotationEnabled = true;
+		}
+
+		public void Disable() {
+			hinge.transform.rotation = hingeInitialRotation;
+			rotationEnabled = false;
+		}
+
 		private Quaternion GetRotationAroundAxis(Transform from, Transform to, Shared.Axis axis) {
 			Vector3 direction = to.position - from.transform.position;
 			Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);

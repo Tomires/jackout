@@ -24,8 +24,12 @@ namespace Jackout.Logic {
 			}
 		}
 
-		public void Switch() {
-			gateOpened = !gateOpened;
+		public void Switch(bool opened) {
+			if(gateOpened == opened) {
+				return;
+			}
+
+			gateOpened = opened;
 			animationStep = 0.0f;
 
 			if(gateOpened) {

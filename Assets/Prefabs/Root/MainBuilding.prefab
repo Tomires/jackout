@@ -417,6 +417,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4067872609508284}
+  - component: {fileID: 114601557617143744}
+  - component: {fileID: 65630130229029720}
+  - component: {fileID: 54607925063842130}
   m_Layer: 0
   m_Name: MiniDisc
   m_TagString: Untagged
@@ -1503,7 +1506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1749601644661310
 GameObject:
   m_ObjectHideFlags: 1
@@ -1802,7 +1805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1884073280612584
 GameObject:
   m_ObjectHideFlags: 1
@@ -1963,6 +1966,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4281110627600150}
   - component: {fileID: 212459875355300640}
+  - component: {fileID: 114193486682359316}
+  - component: {fileID: 65428215680447958}
+  - component: {fileID: 54899521228576184}
   m_Layer: 0
   m_Name: businesscard
   m_TagString: Untagged
@@ -2038,6 +2044,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4100251449704328}
+  - component: {fileID: 114639000639114862}
+  - component: {fileID: 65228881336278762}
+  - component: {fileID: 54008284114266524}
   m_Layer: 0
   m_Name: VRHeadset
   m_TagString: Untagged
@@ -8023,6 +8032,51 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1884073280612584}
   m_Mesh: {fileID: 4300008, guid: 590073f4feb956e43b53fd7ae7c21d78, type: 3}
+--- !u!54 &54008284114266524
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1948337859925808}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!54 &54607925063842130
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256047334140254}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!54 &54899521228576184
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1932019955622372}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!64 &64003546668005278
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -8823,6 +8877,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65228881336278762
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1948337859925808}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 232.20772, y: 147.36575, z: 177.24742}
+  m_Center: {x: 5.0327644, y: -25.879837, z: -818.1937}
 --- !u!65 &65233985425786136
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -8871,6 +8937,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.1250001, z: 1.2161739}
   m_Center: {x: 0, y: 0.06250006, z: 0.000023037195}
+--- !u!65 &65428215680447958
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1932019955622372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.821307, y: 8.4466305, z: 2.575813}
+  m_Center: {x: -0.11268296, y: 0.17836311, z: 0.15385295}
 --- !u!65 &65611116101223046
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -8883,6 +8961,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65630130229029720
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256047334140254}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12644482, y: 0.035859704, z: 0.11468601}
+  m_Center: {x: 0.06427431, y: 0.0063305497, z: 0.09426451}
 --- !u!65 &65640557645181994
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -23857,6 +23947,20 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114193486682359316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1932019955622372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4d17ee2483937488f064db9d8bac28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabbed: 0
+  dopplegangerMaterial: {fileID: 2100000, guid: a535fa98713a3804697a5681243bed9c,
+    type: 2}
 --- !u!114 &114226816968271004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -41709,6 +41813,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 0
+--- !u!114 &114601557617143744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1256047334140254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4d17ee2483937488f064db9d8bac28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabbed: 0
+  dopplegangerMaterial: {fileID: 2100000, guid: a535fa98713a3804697a5681243bed9c,
+    type: 2}
 --- !u!114 &114601585338784572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -48503,6 +48621,20 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114639000639114862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1948337859925808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4d17ee2483937488f064db9d8bac28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabbed: 0
+  dopplegangerMaterial: {fileID: 2100000, guid: a535fa98713a3804697a5681243bed9c,
+    type: 2}
 --- !u!114 &114645710391037088
 MonoBehaviour:
   m_ObjectHideFlags: 1

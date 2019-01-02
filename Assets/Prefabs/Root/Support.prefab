@@ -84,7 +84,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1198001564493964
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1448291377923806
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1968996928743632
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4068211282764160
 Transform:
   m_ObjectHideFlags: 1
@@ -14372,18 +14372,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6524e8f7416b148b09b95cc77b0eb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementOutside: {fileID: 0}
-  movementStationTicket: {fileID: 0}
-  movementStationInside: {fileID: 0}
-  movementApartmentHallway: {fileID: 0}
-  movementElevator: {fileID: 0}
-  movementApartmentInside: {fileID: 0}
+  movementOutside: {fileID: 1685632384409272}
+  movementStationTicket: {fileID: 1820752834168058}
+  movementStationInside: {fileID: 1979463172061012}
+  movementApartmentHallway: {fileID: 1225332613479108}
+  movementElevator: {fileID: 1435197395183522}
+  movementApartmentInside: {fileID: 1120851097558168}
+  movementPhoneBooth: {fileID: 1232669039462030}
   colliderOutside: {fileID: 0}
   colliderStationTicket: {fileID: 0}
   colliderStationInside: {fileID: 0}
   colliderApartmentHallway: {fileID: 0}
   colliderApartmentElevator: {fileID: 0}
   colliderApartmentInside: {fileID: 0}
+  aptUpperFloorWall: {fileID: 0}
+  aptBlockEntryDoor: {fileID: 0}
+  aptRoomEntryDoor: {fileID: 0}
+  stationGate1: {fileID: 0}
+  stationGate2: {fileID: 0}
+  stationLight1: {fileID: 0}
+  stationLight2: {fileID: 0}
+  stationIntercom: {fileID: 0}
+  computerCamera: {fileID: 0}
+  computerStatic: {fileID: 0}
 --- !u!114 &114951991037975018
 MonoBehaviour:
   m_ObjectHideFlags: 1

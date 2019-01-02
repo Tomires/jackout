@@ -396,7 +396,6 @@ GameObject:
   - component: {fileID: 23557678467777084}
   - component: {fileID: 33385832345082210}
   - component: {fileID: 114989250687653772}
-  - component: {fileID: 64890927523880234}
   m_Layer: 0
   m_Name: FlowerPot
   m_TagString: Untagged
@@ -682,7 +681,6 @@ GameObject:
   - component: {fileID: 23687627221024988}
   - component: {fileID: 33983161034623388}
   - component: {fileID: 114504575223149212}
-  - component: {fileID: 64701202193280982}
   m_Layer: 0
   m_Name: grass
   m_TagString: Untagged
@@ -736,7 +734,6 @@ GameObject:
   - component: {fileID: 23332319135781928}
   - component: {fileID: 33795607070871348}
   - component: {fileID: 114885502781382986}
-  - component: {fileID: 64477748988827954}
   m_Layer: 0
   m_Name: water
   m_TagString: Untagged
@@ -1059,7 +1056,6 @@ GameObject:
   - component: {fileID: 23011330738792462}
   - component: {fileID: 33550526012118920}
   - component: {fileID: 114984983713736292}
-  - component: {fileID: 64796047191688074}
   m_Layer: 0
   m_Name: FlowerPot
   m_TagString: Untagged
@@ -1096,7 +1092,6 @@ GameObject:
   - component: {fileID: 23076172862645556}
   - component: {fileID: 33824849708591762}
   - component: {fileID: 114625954086645814}
-  - component: {fileID: 64761123732593164}
   m_Layer: 0
   m_Name: FlowerPot
   m_TagString: Untagged
@@ -5882,76 +5877,6 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1390057392907458}
-  m_Mesh: {fileID: 0}
---- !u!64 &64477748988827954
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1435982052831244}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
---- !u!64 &64701202193280982
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1390057392907458}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
---- !u!64 &64761123732593164
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1716906564899946}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
---- !u!64 &64796047191688074
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1697377299539394}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
---- !u!64 &64890927523880234
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1223603900656946}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
 --- !u!114 &114040481161772196
 MonoBehaviour:

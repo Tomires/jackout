@@ -242,7 +242,6 @@ GameObject:
   - component: {fileID: 23593227476024584}
   - component: {fileID: 33653414856073542}
   - component: {fileID: 114788212856246196}
-  - component: {fileID: 64624537756345820}
   m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
@@ -298,7 +297,6 @@ GameObject:
   - component: {fileID: 23918609042880126}
   - component: {fileID: 33741540914997752}
   - component: {fileID: 114266926396555766}
-  - component: {fileID: 64077950299507474}
   - component: {fileID: 114621451770084232}
   m_Layer: 2
   m_Name: TeleportRing
@@ -1269,20 +1267,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 2
---- !u!64 &64077950299507474
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1541827204019258}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
 --- !u!64 &64214125130835890
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -1303,20 +1287,6 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1232669039462030}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
---- !u!64 &64624537756345820
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1403034878211194}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1

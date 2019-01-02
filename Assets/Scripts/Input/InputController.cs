@@ -24,7 +24,10 @@ namespace Jackout.Input {
 		private bool shiftInitiated = false;
 		private bool grabPossible = false;
 		private bool objectGrabbed = false;
+		private bool rotatePossible = false;
+		private bool objectInRotation = false;
 		private GameObject grabbedObject;
+		private GameObject rotateableObject;
 		private bool triggerPushed = false;
 
 		void Start () {
@@ -74,7 +77,14 @@ namespace Jackout.Input {
 				globalAudio.Play();
 				objectGrabbed = false;
 			}
-
+			else if(actionInteract && rotatePossible) {
+				rotateableObject.GetComponent<Interaction.ObjectRotateable>().RotateTowardPivot(gameObject);
+				objectInRotation = true;
+			}
+			else if(actionRelease && objectInRotation) {
+				rotateableObject.GetComponent<Interaction.ObjectRotateable>().StopRotating();
+				objectInRotation = false;
+			}
 		}
 
 		private void OnTriggerEnter(Collider col) {
@@ -83,11 +93,17 @@ namespace Jackout.Input {
 				grabbedObject = col.gameObject;
 				grabPossible = true;
 			}
+			else if(col.gameObject.GetComponent<Interaction.ObjectRotateable>()) {
+				GetComponent<Renderer>().material = interactiveMaterial;
+				rotateableObject = col.gameObject;
+				rotatePossible = true;
+			}
 		}
 
 		private void OnTriggerExit(Collider col) {
 			GetComponent<Renderer>().material = defaultMaterial;
 			grabPossible = false;
+			rotatePossible = false;
 		}
 
 		private void DetectInputs(out bool actionTeleportation, out bool shiftLeft, out bool shiftRight, out bool actionInteract, out bool actionRelease) {

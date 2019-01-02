@@ -279,15 +279,14 @@ namespace TButt.Editor
             static void ShowControllerGroupLabel(string label, ref bool groupToggle)
         {
             EditorGUILayout.LabelField(label, TBEditorStyles.h2, new GUILayoutOption[3] { GUILayout.Width(controllerLabelColumnWidth + controllerLabelColumnWidthRemainder), GUILayout.ExpandHeight(false), GUILayout.ExpandWidth(false) });
-            groupToggle = EditorGUILayout.ToggleLeft(new GUIContent("Enabled"), groupToggle, GUILayout.Width(controllerLabelColumnWidth + controllerLabelColumnWidthRemainder));
-            
             if (groupToggle)
             {
                 GUI.contentColor = Color.green;
+                groupToggle = EditorGUILayout.ToggleLeft(new GUIContent("Enabled"), groupToggle, GUILayout.Width(controllerLabelColumnWidth + controllerLabelColumnWidthRemainder));
             }
             else
             {
-                GUI.contentColor = Color.red;
+                groupToggle = EditorGUILayout.ToggleLeft(new GUIContent("Enable"), groupToggle, GUILayout.Width(controllerLabelColumnWidth + controllerLabelColumnWidthRemainder));
             }
         }
 #endregion

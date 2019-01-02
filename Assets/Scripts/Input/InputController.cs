@@ -15,6 +15,9 @@ namespace Jackout.Input {
 		public float joystickThreshold = 0.6f;
 		public float triggerThreshold = 0.7f;
 		public Material interactiveMaterial;
+		public AudioSource globalAudio;
+		public AudioClip grabSound;
+		public AudioClip dropSound;
 		private Material defaultMaterial;
 		private TBInput.Controller controller;
 		private bool teleportInitiated = false;
@@ -60,11 +63,15 @@ namespace Jackout.Input {
 			if(actionInteract && grabPossible && !objectGrabbed) {
 				grabbedObject.GetComponent<Interaction.ObjectGrabbable>().attachToController(gameObject);
 				GetComponent<MeshRenderer>().enabled = false;
+				globalAudio.clip = grabSound;
+				globalAudio.Play();
 				objectGrabbed = true;
 			}
 			else if(actionRelease && objectGrabbed) {
 				grabbedObject.GetComponent<Interaction.ObjectGrabbable>().returnToInitialLocation();
 				GetComponent<MeshRenderer>().enabled = true;
+				globalAudio.clip = dropSound;
+				globalAudio.Play();
 				objectGrabbed = false;
 			}
 

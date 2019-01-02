@@ -27,9 +27,9 @@ namespace Jackout.Interaction {
 				transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, animationStep);
 				animationStep += Time.deltaTime;
 			}
-			else if(grabbed){
+			/* else if(grabbed){
 				transform.localPosition = Vector3.zero;
-			}
+			} */
 		}
 
 		void OnTriggerEnter(Collider col) {
@@ -44,10 +44,10 @@ namespace Jackout.Interaction {
 			Destroy(doppleganger.GetComponent<ObjectGrabbable>());
 
 			transform.SetParent(controller.transform);
-			//transform.localPosition = Vector3.zero;
-			targetPosition = controller.transform.position;
+			/* targetPosition = controller.transform.position;
 			targetRotation = transform.rotation;
-			animationStep = 0.0f;
+			animationStep = 0.0f; */
+			transform.localPosition = Vector3.zero;
 			grabbed = true;
 		}
 

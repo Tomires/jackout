@@ -11328,7 +11328,7 @@ MonoBehaviour:
   dontDestroyMeshOnDelete: 0
   m_selectedFaces: 
   m_SelectedEdges: []
-  m_selectedTriangles: 86000000
+  m_selectedTriangles: 
 --- !u!114 &114788212856246196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14358,6 +14358,7 @@ MonoBehaviour:
   aptUpperFloorWall: {fileID: 0}
   aptBlockEntryDoor: {fileID: 0}
   aptRoomEntryDoor: {fileID: 0}
+  elevatorCallButton: {fileID: 0}
   stationGate1: {fileID: 0}
   stationGate2: {fileID: 0}
   stationLight1: {fileID: 0}

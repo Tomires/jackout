@@ -6664,7 +6664,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 4877b7d802311c746883430a18c33349, type: 2}
+  - {fileID: 2100000, guid: 946f6355ed08a6d43b2e27c157b551c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25810,6 +25810,9 @@ MonoBehaviour:
   elevatorDoor1: {fileID: 114810698953318656}
   elevatorDoor2: {fileID: 114935964492197448}
   stateControl: {fileID: 0}
+  buttonSpriteRenderer: {fileID: 212930150938072958}
+  buttonUp: {fileID: 21300000, guid: 5a90218d2645c28479cc89210c203e7d, type: 3}
+  buttonDown: {fileID: 21300000, guid: 2ad0c0aa8f52777459c5da36b3a2e869, type: 3}
 --- !u!114 &114299297260667940
 MonoBehaviour:
   m_ObjectHideFlags: 1

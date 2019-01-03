@@ -6,7 +6,7 @@ namespace Jackout.Logic {
 	public class StateControl : MonoBehaviour {
 		public GameObject movementOutside, movementStationTicket, movementStationInside, movementApartmentHallway, movementElevator, movementApartmentInside, movementPhoneBooth;
 		public GameObject colliderOutside, colliderStationTicket, colliderStationInside, colliderApartmentHallway, colliderApartmentElevator, colliderApartmentInside;
-		public GameObject aptUpperFloorWall, aptBlockEntryDoor, aptRoomEntryDoor;
+		public GameObject aptUpperFloorWall, aptBlockEntryDoor, aptRoomEntryDoor, elevatorCallButton;
 		public GameObject stationGate1, stationGate2, stationLight1, stationLight2, stationIntercom;
 		public GameObject computerCamera, computerStatic;
 		private Shared.State previousState = Shared.State.Initial;
@@ -53,6 +53,9 @@ namespace Jackout.Logic {
 					/* apartment door is unlocked */
 					aptRoomEntryDoor.GetComponent<Interaction.ObjectRotateable>().Enable();
 
+					/* change elevator call button sprite to down arrow*/
+					elevatorCallButton.GetComponent<Interaction.ElevatorCallButton>().ChangeButtonSprite(false);
+
 					/* show wall with painting instead of door */
 					aptBlockEntryDoor.SetActive(false);
 					aptUpperFloorWall.SetActive(true);
@@ -65,6 +68,9 @@ namespace Jackout.Logic {
 				case Shared.State.AptArrivedLowerFloor:
 					/* apartment door is locked */
 					aptRoomEntryDoor.GetComponent<Interaction.ObjectRotateable>().Disable();
+
+					/* change elevator call button sprite to up arrow */
+					elevatorCallButton.GetComponent<Interaction.ElevatorCallButton>().ChangeButtonSprite(true);
 
 					/* hide wall, show entry door */
 					aptBlockEntryDoor.SetActive(true);

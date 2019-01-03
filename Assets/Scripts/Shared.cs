@@ -12,6 +12,10 @@ namespace Jackout {
 			X, Y, Z
 		}
 
+		public enum State {
+			Initial, ElectricalBox1, ElectricalBox2, StationBarrierOpen, ElevatorCalled, AptArrivedLowerFloor, AptArrivedUpperFloor
+		}
+
 		public static bool isInRange(float value, float min, float max) {
 			if(value < min && value > max) {
 				return false;

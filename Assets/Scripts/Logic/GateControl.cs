@@ -42,7 +42,7 @@ namespace Jackout.Logic {
 			audioSource.clip = audioOpen;
 			audioSource.Play();
 
-			if(gateOpened) {
+			if(!gateOpened) {
 				target = initialPosition;
 				origin = initialPosition + openedOffset;
 			}

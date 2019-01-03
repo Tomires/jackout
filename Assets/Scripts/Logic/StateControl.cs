@@ -9,13 +9,10 @@ namespace Jackout.Logic {
 		public GameObject aptUpperFloorWall, aptBlockEntryDoor, aptRoomEntryDoor;
 		public GameObject stationGate1, stationGate2, stationLight1, stationLight2, stationIntercom;
 		public GameObject computerCamera, computerStatic;
-		private enum State {
-			Initial, ElectricalBox1, ElectricalBox2, StationBarrierOpen, ElevatorCalled, AptArrivedLowerFloor, AptArrivedUpperFloor
-		}
-		private State previousState = State.Initial;
-		private State currentState = State.Initial;
+		private Shared.State previousState = Shared.State.Initial;
+		private Shared.State currentState = Shared.State.Initial;
 
-		private void ChangeState(State nextState) {
+		public void ChangeState(Shared.State nextState) {
 			previousState = currentState;
 			currentState = nextState;
 
@@ -24,7 +21,7 @@ namespace Jackout.Logic {
 
 		private void UpdateScene() {
 			switch(currentState) {
-				case State.ElectricalBox1:
+				case Shared.State.ElectricalBox1:
 					/* open up station */
 					stationGate1.GetComponent<GateControl>().Switch(true);
 					stationGate2.GetComponent<GateControl>().Switch(true);
@@ -36,23 +33,23 @@ namespace Jackout.Logic {
 					movementStationTicket.SetActive(true);
 					break;
 
-				case State.StationBarrierOpen:
+				case Shared.State.StationBarrierOpen:
 					/* area behind ticket barriers is accessible */
 					movementStationInside.SetActive(true);
 					break;
 
-				case State.ElectricalBox2:
+				case Shared.State.ElectricalBox2:
 					/* computer in apartment shows camera feed */
 					computerCamera.SetActive(true);
 					computerStatic.SetActive(false);
 					break;
 
-				case State.ElevatorCalled:
+				case Shared.State.ElevatorCalled:
 					/* inside of elevator is accessible */
 					movementElevator.SetActive(true);
 					break;
 
-				case State.AptArrivedUpperFloor:
+				case Shared.State.AptArrivedUpperFloor:
 					/* apartment door is unlocked */
 					aptRoomEntryDoor.GetComponent<Interaction.ObjectRotateable>().Enable();
 
@@ -65,7 +62,7 @@ namespace Jackout.Logic {
 					movementPhoneBooth.SetActive(false);
 					movementApartmentInside.SetActive(true);
 					break;
-				case State.AptArrivedLowerFloor:
+				case Shared.State.AptArrivedLowerFloor:
 					/* apartment door is locked */
 					aptRoomEntryDoor.GetComponent<Interaction.ObjectRotateable>().Disable();
 
@@ -79,7 +76,7 @@ namespace Jackout.Logic {
 					movementApartmentInside.SetActive(false);
 					break;
 
-				case State.Initial:
+				case Shared.State.Initial:
 					/* close down station */
 					stationGate1.GetComponent<GateControl>().Switch(false);
 					stationGate2.GetComponent<GateControl>().Switch(false);

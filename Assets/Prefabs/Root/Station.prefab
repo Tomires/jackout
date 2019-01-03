@@ -12037,7 +12037,7 @@ MonoBehaviour:
   openedOffset: {x: 0, y: 0, z: -3}
   openingTime: 5
   audioOpen: {fileID: 8300000, guid: 076bc775eaee79942a751536c145b57e, type: 3}
-  audioLoop: 0
+  audioLoop: 1
   audioSource: {fileID: 82497918788499306}
 --- !u!114 &114080634078516924
 MonoBehaviour:
@@ -33241,7 +33241,7 @@ MonoBehaviour:
   openedOffset: {x: 4.65, y: 0, z: 0}
   openingTime: 5
   audioOpen: {fileID: 8300000, guid: 076bc775eaee79942a751536c145b57e, type: 3}
-  audioLoop: 0
+  audioLoop: 1
   audioSource: {fileID: 82170875573805954}
 --- !u!212 &212018058829472522
 SpriteRenderer:

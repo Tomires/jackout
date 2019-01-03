@@ -7,6 +7,7 @@ namespace Jackout.Interaction {
 		public Vector3 pushOffset;
 		public AudioClip audioPush;
 		public AudioSource audioSource;
+		public BaseButton buttonBehaviour;
 		private Vector3 initialPosition;
 		private float animationStep = 1.0f;
 		private bool pushed = false;
@@ -33,6 +34,8 @@ namespace Jackout.Interaction {
 		}
 
 		public void Use() {
+			buttonBehaviour.Action();
+
 			if(audioPush != null) {
 				audioSource.clip = audioPush;
 				audioSource.Play();

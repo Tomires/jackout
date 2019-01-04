@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Jackout.Logic {
-	public class ElevatorControl : MonoBehaviour {
+	public class ElevatorControl : PuzzleControl {
 		public StateControl stateControl;
-		public Interaction.ElevatorPuzzleButton[] puzzleButtons;
+		public Interaction.PuzzleButton[] puzzleButtons;
 		public GateControl elevatorDoor1, elevatorDoor2;
 		public Interaction.ElevatorFloorButton secondFloorButton;
 		public AudioSource audioSource;
@@ -55,7 +55,7 @@ namespace Jackout.Logic {
 			elevatorDoor2.Switch(false);
 		}
 
-		public void CheckButtonStates() {
+		public override void CheckButtonStates() {
 			/* if we reach a specific combination, unlock button for second floor */
 			if(puzzleButtons[0].currentIcon == 0 &&
 				puzzleButtons[1].currentIcon == 1 &&

@@ -17,14 +17,14 @@ namespace Jackout.Logic {
 
         public override void CheckButtonStates() {
             /* 42 -> turn on camera */
-            if(puzzleButtons[0].currentIcon == 0 &&
-			    puzzleButtons[1].currentIcon == 6) {
+            if(puzzleButtons[0].currentIcon == 5 &&
+			    puzzleButtons[1].currentIcon == 0) {
 				stateControl.ChangeState(Shared.State.ElectricalBox1);
                 audioSource.Play();
 			}
             /* 06 -> activate station */
-            else if(puzzleButtons[0].currentIcon == 4 &&
-			    puzzleButtons[1].currentIcon == 2) {
+            else if(puzzleButtons[0].currentIcon == 2 &&
+			    puzzleButtons[1].currentIcon == 1) {
                 stateControl.ChangeState(Shared.State.ElectricalBox2);
                 audioSource.Play();
             }

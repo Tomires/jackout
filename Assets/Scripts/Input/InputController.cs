@@ -15,6 +15,8 @@ namespace Jackout.Input {
 		public float joystickThreshold = 0.6f;
 		public float triggerThreshold = 0.7f;
 		public Material interactiveMaterial;
+		public GameObject analogRepresentation, triggerRepresentation;
+		public Renderer renderer;
 		public AudioSource globalAudio;
 		public AudioClip grabSound;
 		public AudioClip dropSound;
@@ -31,6 +33,8 @@ namespace Jackout.Input {
 		private GameObject rotateableObject;
 		private GameObject pushableObject;
 		private bool triggerPushed = false;
+		public float rumbleIntensity = 0.2f;
+		private float rumbleBuffer = 0.0f;
 
 		void Start () {
 			if(controllerHand == ControllerHand.LeftController) {
@@ -40,10 +44,18 @@ namespace Jackout.Input {
 				controller = TBInput.Controller.RHandController;
 			}
 
-			defaultMaterial = GetComponent<Renderer>().material;
+			defaultMaterial = renderer.material;
 		}
 
 		void Update () {
+			if(rumbleBuffer > 0.0f) {
+				TBInput.SetRumble(controller, rumbleIntensity);
+				rumbleBuffer -= Time.deltaTime;
+			}
+			else {
+				TBInput.SetRumble(controller, 0.0f);
+			}
+
 			bool actionTeleportation, shiftLeft, shiftRight, actionInteract, actionRelease;
 			DetectInputs(out actionTeleportation, out shiftLeft, out shiftRight, out actionInteract, out actionRelease);
 
@@ -66,15 +78,19 @@ namespace Jackout.Input {
 			}
 
 			if(actionInteract && grabPossible && !objectGrabbed) {
+				foreach(Renderer r in GetComponentsInChildren<Renderer>()) {
+					r.enabled = false;
+				}
 				grabbedObject.GetComponent<Interaction.ObjectGrabbable>().attachToController(gameObject);
-				GetComponent<MeshRenderer>().enabled = false;
 				globalAudio.clip = grabSound;
 				globalAudio.Play();
 				objectGrabbed = true;
 			}
 			else if(actionRelease && objectGrabbed) {
 				grabbedObject.GetComponent<Interaction.ObjectGrabbable>().returnToInitialLocation();
-				GetComponent<MeshRenderer>().enabled = true;
+				foreach(Renderer r in GetComponentsInChildren<Renderer>()) {
+					r.enabled = true;
+				}
 				globalAudio.clip = dropSound;
 				globalAudio.Play();
 				objectGrabbed = false;
@@ -94,25 +110,32 @@ namespace Jackout.Input {
 		}
 
 		private void OnTriggerEnter(Collider col) {
+			bool interactable = false;
+
 			if(col.gameObject.GetComponent<Interaction.ObjectGrabbable>() && !col.gameObject.GetComponent<Interaction.ObjectGrabbable>().grabbed) {
-				GetComponent<Renderer>().material = interactiveMaterial;
+				interactable = true;
 				grabbedObject = col.gameObject;
 				grabPossible = true;
 			}
 			else if(col.gameObject.GetComponent<Interaction.ObjectRotateable>()) {
-				GetComponent<Renderer>().material = interactiveMaterial;
+				interactable = true;
 				rotateableObject = col.gameObject;
 				rotatePossible = true;
 			}
 			else if(col.gameObject.GetComponent<Interaction.ObjectPushable>()) {
-				GetComponent<Renderer>().material = interactiveMaterial;
+				interactable = true;
 				pushableObject = col.gameObject;
 				pushPossible = true;
+			}
+
+			if(interactable) {
+				renderer.material = interactiveMaterial;
+				rumbleBuffer = 0.05f;
 			}
 		}
 
 		private void OnTriggerExit(Collider col) {
-			GetComponent<Renderer>().material = defaultMaterial;
+			renderer.material = defaultMaterial;
 			grabPossible = false;
 			rotatePossible = false;
 			pushPossible = false;

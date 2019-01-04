@@ -25,7 +25,7 @@ namespace Jackout {
 			}
 		}
 
-		public static float Map(this float value, float min, float max) {
+		public static float Map(float value, float min, float max) {
 			if(value < min) {
 				return min;
 			}

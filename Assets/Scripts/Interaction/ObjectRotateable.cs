@@ -6,7 +6,9 @@ namespace Jackout.Interaction {
 	public class ObjectRotateable : MonoBehaviour {
 		public bool rotationEnabled = false;
 		public Shared.Axis rotationAxis = Shared.Axis.X;
-		public float allowedOffset = 90.0f; /* in degrees */
+		public float allowedPositiveOffset = 89.0f; /* in degrees */
+		public float allowedNegativeOffset = -10.0f;
+		public float centerDeadzone = 15.0f;
 		public float initialOffset = 90.0f;
 		public GameObject hinge;
 		public AudioClip audioFromInitial, audioToInitial, audioDenied;
@@ -91,21 +93,30 @@ namespace Jackout.Interaction {
 			switch(axis) {
 				case Shared.Axis.X:
 					rotationEuler.x += initialOffset;
-					rotationEuler.x.Map(initialOffset - allowedOffset, initialOffset + allowedOffset);
+					rotationEuler.x = Shared.Map(rotationEuler.x, initialOffset - allowedNegativeOffset, initialOffset + allowedPositiveOffset);
+					if(Mathf.Abs(rotationEuler.x - hingeInitialRotation.eulerAngles.x) < centerDeadzone) {
+						rotationEuler.x = hingeInitialRotation.eulerAngles.x;
+					}
 					rotationEuler.y = 0.0f;
 					rotationEuler.z = 0.0f;
 					break;
 				case Shared.Axis.Y:
 					rotationEuler.x = 0.0f;
 					rotationEuler.y += initialOffset;
-					rotationEuler.y.Map(initialOffset - allowedOffset, initialOffset + allowedOffset);
+					rotationEuler.y = Shared.Map(rotationEuler.y, initialOffset - allowedNegativeOffset, initialOffset + allowedPositiveOffset);
+					if(Mathf.Abs(rotationEuler.y - hingeInitialRotation.eulerAngles.y) < centerDeadzone) {
+						rotationEuler.y = hingeInitialRotation.eulerAngles.y;
+					}
 					rotationEuler.z = 0.0f;
 					break;
 				default:
 					rotationEuler.x = 0.0f;
 					rotationEuler.y = 0.0f;
 					rotationEuler.z += initialOffset;
-					rotationEuler.z.Map(initialOffset - allowedOffset, initialOffset + allowedOffset);
+					rotationEuler.z = Shared.Map(rotationEuler.z, initialOffset - allowedNegativeOffset, initialOffset + allowedPositiveOffset);
+					if(Mathf.Abs(rotationEuler.z - hingeInitialRotation.eulerAngles.z) < centerDeadzone) {
+						rotationEuler.z = hingeInitialRotation.eulerAngles.z;
+					}
 					break;
 			}
 

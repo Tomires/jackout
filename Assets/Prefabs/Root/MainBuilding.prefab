@@ -18542,6 +18542,7 @@ MonoBehaviour:
   grabbed: 0
   dopplegangerMaterial: {fileID: 2100000, guid: a535fa98713a3804697a5681243bed9c,
     type: 2}
+  grabBehaviour: {fileID: 0}
 --- !u!65 &65630130229029720
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74202,6 +74203,7 @@ MonoBehaviour:
   grabbed: 0
   dopplegangerMaterial: {fileID: 2100000, guid: a535fa98713a3804697a5681243bed9c,
     type: 2}
+  grabBehaviour: {fileID: 0}
 --- !u!65 &65428215680447958
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -77161,6 +77163,7 @@ MonoBehaviour:
   grabbed: 0
   dopplegangerMaterial: {fileID: 2100000, guid: a535fa98713a3804697a5681243bed9c,
     type: 2}
+  grabBehaviour: {fileID: 0}
 --- !u!1 &1950544948177728
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,11 +9,13 @@ namespace Jackout.Logic {
 		public GameObject aptUpperFloorWall, aptBlockEntryDoor, aptRoomEntryDoor, elevatorCallButton;
 		public GameObject stationGate1, stationGate2, stationLight1, stationLight2, stationIntercom;
 		public GameObject computerCamera, computerStatic;
+		public Interaction.PhoneGrab telephone;
 		private Shared.State previousState = Shared.State.Initial;
 		public Shared.State currentState = Shared.State.Initial;
 
 		void Start () {
 			UpdateScene();
+			telephone.startRinging();
 		}
 
 		public void ChangeState(Shared.State nextState) {

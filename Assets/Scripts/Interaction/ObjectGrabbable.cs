@@ -6,6 +6,7 @@ namespace Jackout.Interaction {
 	public class ObjectGrabbable : MonoBehaviour {
 		public bool grabbed = false;
 		public Material dopplegangerMaterial;
+		public BaseGrab grabBehaviour;
 		private Vector3 initialPosition;
 		private Quaternion initialRotation;
 		private Transform parent;
@@ -41,7 +42,10 @@ namespace Jackout.Interaction {
 			foreach(Renderer r in doppleganger.GetComponentsInChildren<Renderer>()) {
 				r.material = dopplegangerMaterial;
 			}
+
 			Destroy(doppleganger.GetComponent<ObjectGrabbable>());
+			Destroy(doppleganger.GetComponentInChildren<PhoneGrab>());
+			Destroy(doppleganger.GetComponentInChildren<AudioSource>());
 
 			transform.SetParent(controller.transform);
 			/* targetPosition = controller.transform.position;
@@ -49,6 +53,10 @@ namespace Jackout.Interaction {
 			animationStep = 0.0f; */
 			transform.localPosition = Vector3.zero;
 			grabbed = true;
+
+			if(grabBehaviour != null) {
+				grabBehaviour.PickedUp();
+			}
 		}
 
 		public void returnToInitialLocation() {
@@ -59,6 +67,10 @@ namespace Jackout.Interaction {
 
 			Destroy(doppleganger);
 			grabbed = false;
+
+			if(grabBehaviour != null) {
+				grabBehaviour.Dropped();
+			}
 		}
 	}
 }

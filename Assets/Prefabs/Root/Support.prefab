@@ -6041,7 +6041,8 @@ MonoBehaviour:
   stationIntercom: {fileID: 0}
   computerCamera: {fileID: 0}
   computerStatic: {fileID: 0}
-  currentState: 1
+  telephone: {fileID: 0}
+  currentState: 0
 --- !u!1 &1333072642524034
 GameObject:
   m_ObjectHideFlags: 0
@@ -14870,6 +14871,46 @@ PrefabInstance:
     - target: {fileID: 8327491656264743853, guid: e2c2c1ccc48d21749b98a1dac096e13b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327491655337948591, guid: e2c2c1ccc48d21749b98a1dac096e13b,
+        type: 3}
+      propertyPath: _quads.Array.data[0]._uv.localPivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327491655337948591, guid: e2c2c1ccc48d21749b98a1dac096e13b,
+        type: 3}
+      propertyPath: _quads.Array.data[0]._uv.localPivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327491655337948591, guid: e2c2c1ccc48d21749b98a1dac096e13b,
+        type: 3}
+      propertyPath: _quads.Array.data[1]._uv.localPivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327491655337948591, guid: e2c2c1ccc48d21749b98a1dac096e13b,
+        type: 3}
+      propertyPath: _quads.Array.data[1]._uv.localPivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327491655337948591, guid: e2c2c1ccc48d21749b98a1dac096e13b,
+        type: 3}
+      propertyPath: _quads.Array.data[2]._uv.localPivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327491655337948591, guid: e2c2c1ccc48d21749b98a1dac096e13b,
+        type: 3}
+      propertyPath: _quads.Array.data[2]._uv.localPivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327491655337948591, guid: e2c2c1ccc48d21749b98a1dac096e13b,
+        type: 3}
+      propertyPath: _quads.Array.data[3]._uv.localPivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327491655337948591, guid: e2c2c1ccc48d21749b98a1dac096e13b,
+        type: 3}
+      propertyPath: _quads.Array.data[3]._uv.localPivot.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

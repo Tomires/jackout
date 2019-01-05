@@ -9500,6 +9500,8 @@ MonoBehaviour:
   audioClose: {fileID: 0}
   audioLoop: 1
   audioSource: {fileID: 82497918788499306}
+  autoClose: 0
+  closeInterval: 10
 --- !u!82 &82497918788499306
 AudioSource:
   m_ObjectHideFlags: 0
@@ -28254,6 +28256,8 @@ MonoBehaviour:
   audioClose: {fileID: 0}
   audioLoop: 1
   audioSource: {fileID: 82170875573805954}
+  autoClose: 0
+  closeInterval: 10
 --- !u!82 &82170875573805954
 AudioSource:
   m_ObjectHideFlags: 0

@@ -1,18 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TButt;
 
 namespace Jackout.Logic {
 	public class TicketBarrierControl : MonoBehaviour {
-		private bool gateOpened = false;
-		private float animationStep = 1.0f;
-		private float closeTimeout = 5.0f;
+		public float closeTimeout = 5.0f;
+		public float cameraTimeout = 10.0f;
 		public GameObject[] doors;
 		public float[] openedOffsets;
+		public SurveillanceControl securityCamera;
+		public GameObject cameraCollider;
 		public Shared.Axis rotationAxis;
+		public StateControl stateControl;
+		private bool gateOpened = false;
+		private float animationStep = 1.0f;
 		private Vector3 rotationAxisInEuler; 
 		private List<Quaternion> initialRotation;
 		private float timeout;
+		private bool waitingForCamera = false;
 
 		void Start () {
 			initialRotation = new List<Quaternion>();
@@ -51,12 +57,38 @@ namespace Jackout.Logic {
 					Switch();
 				}
 			}
+			else if(waitingForCamera) {
+				timeout -= Time.deltaTime;
+				cameraCollider.transform.rotation = TBCameraRig.instance.GetCenter().rotation;
+				if(timeout < 0) {
+					securityCamera.StopLooking();
+				}
+			}
 		}
 
 		public void Switch() {
 			gateOpened = !gateOpened;
 			animationStep = 0.0f;
 			timeout = closeTimeout;
+		}
+
+		public void ButtonPressed(bool entrySide) {
+			if(entrySide) {
+				securityCamera.LookForPlayer(this);
+				cameraCollider.SetActive(true);
+				waitingForCamera = true;
+				timeout = cameraTimeout;
+			}
+			else {
+				Switch();
+			}
+		}
+
+		public void CameraLookedAt() {
+			stateControl.ChangeState(Shared.State.StationBarrierOpen);
+			cameraCollider.SetActive(false);
+			waitingForCamera = false;
+			Switch();
 		}
 	}
 }

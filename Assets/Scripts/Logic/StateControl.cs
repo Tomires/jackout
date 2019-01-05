@@ -10,7 +10,11 @@ namespace Jackout.Logic {
 		public GameObject stationGate1, stationGate2, stationLight1, stationLight2, stationIntercom;
 		public GameObject computerCamera, computerStatic;
 		private Shared.State previousState = Shared.State.Initial;
-		private Shared.State currentState = Shared.State.Initial;
+		public Shared.State currentState = Shared.State.Initial;
+
+		void Start () {
+			UpdateScene();
+		}
 
 		public void ChangeState(Shared.State nextState) {
 			previousState = currentState;

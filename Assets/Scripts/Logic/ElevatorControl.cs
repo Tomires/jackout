@@ -10,26 +10,25 @@ namespace Jackout.Logic {
 		public Interaction.ElevatorFloorButton secondFloorButton;
 		public AudioSource audioSource;
 		public AudioClip audioElevatorEngine;
-		public float timeToReachDestination = 10.0f;
+		public float timeToReachDestination = 11.0f;
 		private float animationStep;
 		private bool inMotion = false;
 		private bool currentlyOnUpperFloor = false;
 
 		void Setup () {
 			animationStep = timeToReachDestination;
-			audioSource.loop = true;
 		}
 
 		void Update () {
 			if(inMotion) {
-				if(animationStep < (timeToReachDestination - 0.5f) && animationStep > (elevatorDoor1.openingTime + 0.5f)) {
+				if(animationStep > (elevatorDoor1.openingTime + 0.5f) && !audioSource.isPlaying) {
 					audioSource.clip = audioElevatorEngine;
 					audioSource.Play();
 				}
 				else if(animationStep > (timeToReachDestination - 0.5f)) {
-					audioSource.Stop();
 					elevatorDoor1.Switch(true);
 					elevatorDoor2.Switch(true);
+					inMotion = false;
 				}
 				animationStep += Time.deltaTime;
 			}
@@ -37,6 +36,8 @@ namespace Jackout.Logic {
 
 		public void GoToFloor(bool upperFloor) {
 			if(currentlyOnUpperFloor == upperFloor) {
+				elevatorDoor1.Switch(true);
+				elevatorDoor2.Switch(true);
 				return;
 			}
 

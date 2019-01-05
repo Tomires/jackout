@@ -11,6 +11,9 @@ namespace Jackout.Logic {
 		public AudioClip audioOpen, audioClose;
 		public bool audioLoop;
 		public AudioSource audioSource;
+		public bool autoClose = false;
+		public float closeInterval = 10.0f;
+		private float timeToClose;
 		private Vector3 initialPosition;
 		private Vector3 target;
 		private Vector3 origin;
@@ -19,6 +22,7 @@ namespace Jackout.Logic {
 			initialPosition = transform.position;
 			animationStep = openingTime;
 			audioSource.loop = audioLoop;
+			timeToClose = closeInterval;
 
 			if(audioClose == null) {
 				audioClose = audioOpen;
@@ -32,6 +36,15 @@ namespace Jackout.Logic {
 			}
 			else {
 				audioSource.Stop();
+			}
+
+			if(autoClose) {
+				if(timeToClose > 0.0f && gateOpened) {
+					timeToClose -= Time.deltaTime;
+				}
+				else if(gateOpened) {
+					Switch(false);
+				}
 			}
 		}
 
@@ -53,6 +66,7 @@ namespace Jackout.Logic {
 			else {
 				target = initialPosition + openedOffset;
 				origin = initialPosition;
+				timeToClose = closeInterval;
 			}
 		}
 	}

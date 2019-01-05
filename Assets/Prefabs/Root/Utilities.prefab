@@ -951,9 +951,9 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2328,9 +2328,9 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -22232,9 +22232,9 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -31683,9 +31683,9 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -45778,6 +45778,86 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114482368461594984, guid: a887a21bc2b8eaf4b8d4e405523b9431,
+        type: 3}
+      propertyPath: _quads.Array.data[0]._uv.localPivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482368461594984, guid: a887a21bc2b8eaf4b8d4e405523b9431,
+        type: 3}
+      propertyPath: _quads.Array.data[0]._uv.localPivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482368461594984, guid: a887a21bc2b8eaf4b8d4e405523b9431,
+        type: 3}
+      propertyPath: _quads.Array.data[1]._uv.localPivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482368461594984, guid: a887a21bc2b8eaf4b8d4e405523b9431,
+        type: 3}
+      propertyPath: _quads.Array.data[1]._uv.localPivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482368461594984, guid: a887a21bc2b8eaf4b8d4e405523b9431,
+        type: 3}
+      propertyPath: _quads.Array.data[2]._uv.localPivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482368461594984, guid: a887a21bc2b8eaf4b8d4e405523b9431,
+        type: 3}
+      propertyPath: _quads.Array.data[2]._uv.localPivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482368461594984, guid: a887a21bc2b8eaf4b8d4e405523b9431,
+        type: 3}
+      propertyPath: _quads.Array.data[3]._uv.localPivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482368461594984, guid: a887a21bc2b8eaf4b8d4e405523b9431,
+        type: 3}
+      propertyPath: _quads.Array.data[3]._uv.localPivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482368461594984, guid: a887a21bc2b8eaf4b8d4e405523b9431,
+        type: 3}
+      propertyPath: _quads.Array.data[4]._uv.localPivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482368461594984, guid: a887a21bc2b8eaf4b8d4e405523b9431,
+        type: 3}
+      propertyPath: _quads.Array.data[4]._uv.localPivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482368461594984, guid: a887a21bc2b8eaf4b8d4e405523b9431,
+        type: 3}
+      propertyPath: _quads.Array.data[5]._uv.localPivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482368461594984, guid: a887a21bc2b8eaf4b8d4e405523b9431,
+        type: 3}
+      propertyPath: _quads.Array.data[5]._uv.localPivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482368461594984, guid: a887a21bc2b8eaf4b8d4e405523b9431,
+        type: 3}
+      propertyPath: _quads.Array.data[6]._uv.localPivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482368461594984, guid: a887a21bc2b8eaf4b8d4e405523b9431,
+        type: 3}
+      propertyPath: _quads.Array.data[6]._uv.localPivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482368461594984, guid: a887a21bc2b8eaf4b8d4e405523b9431,
+        type: 3}
+      propertyPath: _quads.Array.data[7]._uv.localPivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482368461594984, guid: a887a21bc2b8eaf4b8d4e405523b9431,
+        type: 3}
+      propertyPath: _quads.Array.data[7]._uv.localPivot.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114303782821003942, guid: a887a21bc2b8eaf4b8d4e405523b9431,
         type: 3}
       propertyPath: m_selectedTriangles.Array.size
@@ -46133,7 +46213,9 @@ PrefabInstance:
       propertyPath: _uv.Array.data[199].y
       value: 1.935084
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64283810501039188, guid: a887a21bc2b8eaf4b8d4e405523b9431, type: 3}
+    - {fileID: 64564211464781618, guid: a887a21bc2b8eaf4b8d4e405523b9431, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a887a21bc2b8eaf4b8d4e405523b9431, type: 3}
 --- !u!4 &4153265053791463 stripped
 Transform:

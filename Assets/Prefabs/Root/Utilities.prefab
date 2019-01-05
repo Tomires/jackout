@@ -935,7 +935,8 @@ AudioSource:
   m_GameObject: {fileID: 177704997}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: c05fe551940bd1243acbc8c6af92dccb,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -982,7 +983,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2311,7 +2312,8 @@ AudioSource:
   m_GameObject: {fileID: 1706216911}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: c05fe551940bd1243acbc8c6af92dccb,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -2358,7 +2360,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -22214,7 +22216,8 @@ AudioSource:
   m_GameObject: {fileID: 1381918395506566}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: c05fe551940bd1243acbc8c6af92dccb,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -22261,7 +22264,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -31664,7 +31667,8 @@ AudioSource:
   m_GameObject: {fileID: 1592322649692594}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: c05fe551940bd1243acbc8c6af92dccb,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -31711,7 +31715,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -45768,11 +45772,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1853023913057604, guid: a887a21bc2b8eaf4b8d4e405523b9431, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1907437550412110, guid: a887a21bc2b8eaf4b8d4e405523b9431, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114303782821003942, guid: a887a21bc2b8eaf4b8d4e405523b9431,
         type: 3}
@@ -46129,9 +46133,7 @@ PrefabInstance:
       propertyPath: _uv.Array.data[199].y
       value: 1.935084
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 64283810501039188, guid: a887a21bc2b8eaf4b8d4e405523b9431, type: 3}
-    - {fileID: 64564211464781618, guid: a887a21bc2b8eaf4b8d4e405523b9431, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a887a21bc2b8eaf4b8d4e405523b9431, type: 3}
 --- !u!4 &4153265053791463 stripped
 Transform:

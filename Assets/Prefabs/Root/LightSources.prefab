@@ -24213,7 +24213,6 @@ GameObject:
   - component: {fileID: 23810210319853298}
   - component: {fileID: 33825313447748316}
   - component: {fileID: 114930642534659170}
-  - component: {fileID: 64996198125731144}
   m_Layer: 0
   m_Name: 420sign (1)
   m_TagString: Untagged
@@ -24583,20 +24582,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!64 &64996198125731144
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1355877868878612}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &1364816655043424
 GameObject:
   m_ObjectHideFlags: 0

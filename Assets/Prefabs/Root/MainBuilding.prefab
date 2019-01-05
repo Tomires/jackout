@@ -21334,7 +21334,7 @@ MonoBehaviour:
   pushOffset: {x: -0.02, y: 0, z: 0}
   audioPush: {fileID: 8300000, guid: 0ecec3ca66e92cd4986e34de4e7f75cb, type: 3}
   audioSource: {fileID: 82099999178610226}
-  buttonBehaviour: {fileID: 0}
+  buttonBehaviour: {fileID: 114893818696031882}
 --- !u!114 &114893818696031882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24511,8 +24511,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateControl: {fileID: 0}
   puzzleButtons:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6563288479828374968}
+  - {fileID: 3899006920458226977}
   - {fileID: 114886836714370760}
   - {fileID: 114893818696031882}
   elevatorDoor1: {fileID: 114810698953318656}
@@ -29203,8 +29203,8 @@ MonoBehaviour:
   centerDeadzone: 15
   initialOffset: 90
   hinge: {fileID: 1755494696929018}
-  audioFromInitial: {fileID: 8300000, guid: 1b2e83fdb14c60548a0727d36ac1152a, type: 3}
-  audioToInitial: {fileID: 8300000, guid: 08449143a8cc7c846b5e02d9b13ad2ee, type: 3}
+  audioFromInitial: {fileID: 8300000, guid: bce1c2ea8b5dd7a4995b7a3fcc2c9640, type: 3}
+  audioToInitial: {fileID: 8300000, guid: 53c33676e56bc3b48b124392bcc1aea9, type: 3}
   audioDenied: {fileID: 8300000, guid: 474a434cd821bbf46af0868018967c70, type: 3}
   audioSource: {fileID: 82489958030850498}
   feedbackActiveRotation: {x: 0, y: 0, z: 0}
@@ -45101,7 +45101,7 @@ MonoBehaviour:
   pushOffset: {x: -0.02, y: 0, z: 0}
   audioPush: {fileID: 8300000, guid: 0ecec3ca66e92cd4986e34de4e7f75cb, type: 3}
   audioSource: {fileID: 82632263954689936}
-  buttonBehaviour: {fileID: 0}
+  buttonBehaviour: {fileID: 3899006920458226977}
 --- !u!114 &3899006920458226977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53300,7 +53300,7 @@ MonoBehaviour:
   pushOffset: {x: -0.02, y: 0, z: 0}
   audioPush: {fileID: 8300000, guid: 0ecec3ca66e92cd4986e34de4e7f75cb, type: 3}
   audioSource: {fileID: 82672641894948452}
-  buttonBehaviour: {fileID: 0}
+  buttonBehaviour: {fileID: 114886836714370760}
 --- !u!114 &114886836714370760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70352,7 +70352,7 @@ MonoBehaviour:
   pushOffset: {x: -0.02, y: 0, z: 0}
   audioPush: {fileID: 8300000, guid: 0ecec3ca66e92cd4986e34de4e7f75cb, type: 3}
   audioSource: {fileID: 82378195226561018}
-  buttonBehaviour: {fileID: 0}
+  buttonBehaviour: {fileID: 6563288479828374968}
 --- !u!114 &6563288479828374968
 MonoBehaviour:
   m_ObjectHideFlags: 0

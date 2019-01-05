@@ -9072,6 +9072,7 @@ MonoBehaviour:
   openedOffset: {x: 0, y: 0, z: -3}
   openingTime: 5
   audioOpen: {fileID: 8300000, guid: 076bc775eaee79942a751536c145b57e, type: 3}
+  audioClose: {fileID: 0}
   audioLoop: 1
   audioSource: {fileID: 82497918788499306}
 --- !u!82 &82497918788499306
@@ -24180,7 +24181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4418924037411796
 Transform:
   m_ObjectHideFlags: 0
@@ -27429,6 +27430,7 @@ MonoBehaviour:
   openedOffset: {x: 4.65, y: 0, z: 0}
   openingTime: 5
   audioOpen: {fileID: 8300000, guid: 076bc775eaee79942a751536c145b57e, type: 3}
+  audioClose: {fileID: 0}
   audioLoop: 1
   audioSource: {fileID: 82170875573805954}
 --- !u!82 &82170875573805954

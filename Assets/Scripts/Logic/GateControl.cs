@@ -8,7 +8,7 @@ namespace Jackout.Logic {
 		public float openingTime = 5.0f;
 		private bool gateOpened = false;
 		private float animationStep;
-		public AudioClip audioOpen;
+		public AudioClip audioOpen, audioClose;
 		public bool audioLoop;
 		public AudioSource audioSource;
 		private Vector3 initialPosition;
@@ -19,6 +19,10 @@ namespace Jackout.Logic {
 			initialPosition = transform.position;
 			animationStep = openingTime;
 			audioSource.loop = audioLoop;
+
+			if(audioClose == null) {
+				audioClose = audioOpen;
+			}
 		}
 
 		void Update () {
@@ -39,7 +43,7 @@ namespace Jackout.Logic {
 			gateOpened = opened;
 			animationStep = 0.0f;
 
-			audioSource.clip = audioOpen;
+			audioSource.clip = gateOpened ? audioOpen : audioClose;
 			audioSource.Play();
 
 			if(!gateOpened) {

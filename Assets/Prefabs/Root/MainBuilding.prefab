@@ -51824,7 +51824,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openedOffset: {x: -1.35, y: 0, z: 0}
   openingTime: 1.5
-  audioOpen: {fileID: 8300000, guid: 5221ae9563b06294888ccfeea4554fbc, type: 3}
+  audioOpen: {fileID: 8300000, guid: 279f96d7bd1b28146b58f25a00e6dad3, type: 3}
+  audioClose: {fileID: 8300000, guid: c2d6ef15bbaddc34dbf4b4a378b4e950, type: 3}
   audioLoop: 0
   audioSource: {fileID: 82670041482554558}
 --- !u!1 &1729978791013860
@@ -55722,7 +55723,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openedOffset: {x: -0.65, y: 0, z: 0}
   openingTime: 1.5
-  audioOpen: {fileID: 8300000, guid: 5221ae9563b06294888ccfeea4554fbc, type: 3}
+  audioOpen: {fileID: 8300000, guid: 279f96d7bd1b28146b58f25a00e6dad3, type: 3}
+  audioClose: {fileID: 8300000, guid: c2d6ef15bbaddc34dbf4b4a378b4e950, type: 3}
   audioLoop: 0
   audioSource: {fileID: 82678231302788494}
 --- !u!1 &1765882155474894

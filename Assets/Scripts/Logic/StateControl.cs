@@ -116,7 +116,7 @@ namespace Jackout.Logic {
 					/* outside is accessible */
 					movementOutside.SetActive(true);
 					movementPhoneBooth.SetActive(true);
-					movementOutside.SetActive(false);
+					colliderOutside.SetActive(true);
 
 					/* apartment door is locked */
 					aptRoomEntryDoor.GetComponent<Interaction.ObjectRotateable>().Disable();

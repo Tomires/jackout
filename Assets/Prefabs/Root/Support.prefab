@@ -6514,13 +6514,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096004417499934}
-  m_LocalRotation: {x: -0.032682702, y: 0.9581939, z: -0.12197322, w: 0.2567467}
-  m_LocalPosition: {x: -21.9143, y: 7.60021, z: -14.919653}
+  m_LocalRotation: {x: -0.025925972, y: 0.7765816, z: 0.03214872, w: 0.6286615}
+  m_LocalPosition: {x: -21.102, y: 7.686, z: -15.047}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4144062921414964}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 12.531, y: 149.18901, z: -7.373}
+  m_LocalEulerAnglesHint: {x: -4.734, y: 102.018005, z: 0.009000001}
 --- !u!20 &20404622044317632
 Camera:
   m_ObjectHideFlags: 0
@@ -10410,7 +10410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4686461664410884
 Transform:
   m_ObjectHideFlags: 0
@@ -11625,7 +11625,7 @@ MonoBehaviour:
   colliderStationTicket: {fileID: 1353029725}
   colliderStationInside: {fileID: 1723496153}
   colliderApartmentHallway: {fileID: 2020532057}
-  colliderElevator: {fileID: 0}
+  colliderElevator: {fileID: 740987432}
   colliderApartmentInside: {fileID: 827926866}
   aptUpperFloorWall: {fileID: 0}
   aptBlockEntryDoor: {fileID: 0}

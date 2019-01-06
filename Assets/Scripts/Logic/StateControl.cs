@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Jackout.Logic {
 	public class StateControl : MonoBehaviour {
 		public GameObject movementOutside, movementStationTicket, movementStationInside, movementApartmentHallway, movementElevator, movementApartmentInside, movementPhoneBooth;
-		public GameObject colliderOutside, colliderStationTicket, colliderStationInside, colliderApartmentHallway, colliderApartmentElevator, colliderApartmentInside;
+		public GameObject colliderOutside, colliderStationTicket, colliderStationInside, colliderApartmentHallway, colliderElevator, colliderApartmentInside;
 		public GameObject aptUpperFloorWall, aptBlockEntryDoor, aptRoomEntryDoor, elevatorCallButton;
 		public GameObject stationGate1, stationGate2, stationLight1, stationLight2, stationIntercom;
 		public GameObject computerCamera, computerStatic;
@@ -37,11 +37,13 @@ namespace Jackout.Logic {
 
 					/* front area of station is accessible */
 					movementStationTicket.SetActive(true);
+					colliderStationTicket.SetActive(true);
 					break;
 
 				case Shared.State.StationBarrierOpen:
 					/* area behind ticket barriers is accessible */
 					movementStationInside.SetActive(true);
+					colliderStationInside.SetActive(true);
 					break;
 
 				case Shared.State.ElectricalBox2:
@@ -53,6 +55,7 @@ namespace Jackout.Logic {
 				case Shared.State.ElevatorCalled:
 					/* inside of elevator is accessible */
 					movementElevator.SetActive(true);
+					colliderElevator.SetActive(true);
 					break;
 
 				case Shared.State.AptArrivedUpperFloor:
@@ -70,6 +73,8 @@ namespace Jackout.Logic {
 					movementOutside.SetActive(false);
 					movementPhoneBooth.SetActive(false);
 					movementApartmentInside.SetActive(true);
+					colliderOutside.SetActive(false);
+					colliderApartmentInside.SetActive(true);
 					break;
 				case Shared.State.AptArrivedLowerFloor:
 					/* apartment door is locked */
@@ -86,6 +91,8 @@ namespace Jackout.Logic {
 					movementOutside.SetActive(true);
 					movementPhoneBooth.SetActive(true);
 					movementApartmentInside.SetActive(false);
+					colliderOutside.SetActive(true);
+					colliderApartmentInside.SetActive(false);
 					break;
 
 				case Shared.State.Initial:
@@ -103,10 +110,13 @@ namespace Jackout.Logic {
 					/* no station area is accessible */
 					movementStationTicket.SetActive(false);
 					movementStationInside.SetActive(false);
+					colliderStationTicket.SetActive(false);
+					colliderStationInside.SetActive(false);
 
 					/* outside is accessible */
 					movementOutside.SetActive(true);
 					movementPhoneBooth.SetActive(true);
+					movementOutside.SetActive(false);
 
 					/* apartment door is locked */
 					aptRoomEntryDoor.GetComponent<Interaction.ObjectRotateable>().Disable();

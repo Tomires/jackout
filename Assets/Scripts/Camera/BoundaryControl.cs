@@ -18,7 +18,6 @@ namespace Jackout.Camera {
 			if(col.gameObject.CompareTag("Access")) {
 				TBCameraRig.instance.farClipPlane = defaultFarClipPlane;
 				TBCameraRig.instance.nearClipPlane = defaultNearClipPlane;
-				Debug.Log("ON");
 			}
 		}
 
@@ -26,7 +25,6 @@ namespace Jackout.Camera {
 			if(col.gameObject.CompareTag("Access")) {
 				TBCameraRig.instance.nearClipPlane = 0.1f;
 				TBCameraRig.instance.farClipPlane = 0.2f;
-				Debug.Log("OFF");
 			}
 		}
 	}

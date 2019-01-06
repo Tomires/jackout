@@ -56,6 +56,8 @@ namespace Jackout.Input {
 				TBInput.SetRumble(controller, 0.0f);
 			}
 
+			AnimateControllerModel();
+
 			bool actionTeleportation, shiftLeft, shiftRight, actionInteract, actionRelease;
 			DetectInputs(out actionTeleportation, out shiftLeft, out shiftRight, out actionInteract, out actionRelease);
 
@@ -139,6 +141,18 @@ namespace Jackout.Input {
 			grabPossible = false;
 			rotatePossible = false;
 			pushPossible = false;
+		}
+
+		private void AnimateControllerModel() {
+			if(TBInput.GetAxis1D(TBInput.Button.PrimaryTrigger, controller) > triggerThreshold) {
+				triggerRepresentation.transform.localRotation = Quaternion.Euler(-10.0f, -180.0f, 0.0f);
+			}
+			else {
+				triggerRepresentation.transform.localRotation = Quaternion.Euler(10.0f, -180.0f, 0.0f);
+			}
+
+			Vector2 joyPos = TBInput.GetAxis2D(TBInput.Button.Joystick, controller);
+			analogRepresentation.transform.localRotation = Quaternion.Euler(-joyPos.y * 30.0f, 180.0f, joyPos.x * 30.0f);
 		}
 
 		private void DetectInputs(out bool actionTeleportation, out bool shiftLeft, out bool shiftRight, out bool actionInteract, out bool actionRelease) {

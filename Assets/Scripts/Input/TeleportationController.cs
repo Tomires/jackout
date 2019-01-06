@@ -8,6 +8,7 @@ namespace Jackout.Input {
 		public GameObject cameraRig;
 		public string teleportLayerName = "TeleportBoundary";
 		public float shiftIncrement = 45.0f;
+		public Vector3 teleportationOffset;
 		private Vector3 teleportTarget;
 		private bool teleportationAllowed = true;
 		private bool warpingNow = false;
@@ -38,13 +39,13 @@ namespace Jackout.Input {
 			if(Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity) && isNormalGround(hit.normal, 5.0f)) {
 				if(!teleportationRing.activeInHierarchy) {
 					teleportationRing.SetActive(true);
-				}					
+				}
 
 				teleportationRing.GetComponent<TeleportRingController>().MoveRing(hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
 				
 				teleportationAllowed = (hit.transform.gameObject.layer == LayerMask.NameToLayer(teleportLayerName));
 				teleportationRing.GetComponent<TeleportRingController>().SetAllowed(teleportationAllowed);
-				teleportTarget = hit.point;
+				teleportTarget = hit.point + teleportationOffset;
 			}
 			else {
 				teleportationRing.SetActive(false);

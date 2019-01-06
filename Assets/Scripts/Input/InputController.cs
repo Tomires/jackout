@@ -29,9 +29,12 @@ namespace Jackout.Input {
 		private bool rotatePossible = false;
 		private bool objectInRotation = false;
 		private bool pushPossible = false;
+		private bool joystickPossible = false;
+		private bool joystickUsed = false;
 		private GameObject grabbedObject;
 		private GameObject rotateableObject;
 		private GameObject pushableObject;
+		private GameObject joystickObject;
 		private bool triggerPushed = false;
 		public float rumbleIntensity = 0.2f;
 		private float rumbleBuffer = 0.0f;
@@ -108,6 +111,14 @@ namespace Jackout.Input {
 			else if(actionInteract && pushPossible) {
 				pushableObject.GetComponent<Interaction.ObjectPushable>().Use();
 			}
+			else if(actionInteract && joystickPossible) {
+				joystickObject.GetComponent<Interaction.JoystickInteraction>().Grabbed(gameObject);
+				joystickUsed = true;
+			}
+			else if(actionRelease && joystickUsed) {
+				joystickObject.GetComponent<Interaction.JoystickInteraction>().Dropped();
+				joystickUsed = false;
+			}
 
 		}
 
@@ -128,6 +139,11 @@ namespace Jackout.Input {
 				interactable = true;
 				pushableObject = col.gameObject;
 				pushPossible = true;
+			}
+			else if(col.gameObject.GetComponent<Interaction.JoystickInteraction>()) {
+				interactable = true;
+				joystickObject = col.gameObject;
+				joystickPossible = true;
 			}
 
 			if(interactable) {

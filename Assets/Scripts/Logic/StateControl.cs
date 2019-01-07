@@ -10,7 +10,7 @@ namespace Jackout.Logic {
 		public GameObject stationGate1, stationGate2, stationLight1, stationLight2, stationIntercom;
 		public GameObject computerCamera, computerStatic;
 		public Interaction.PhoneGrab telephone;
-		private Shared.State previousState = Shared.State.Initial;
+		public GameObject cameraRig, endCube;
 		public Shared.State currentState = Shared.State.Initial;
 
 		void Start () {
@@ -19,9 +19,7 @@ namespace Jackout.Logic {
 		}
 
 		public void ChangeState(Shared.State nextState) {
-			previousState = currentState;
 			currentState = nextState;
-
 			UpdateScene();
 		}
 
@@ -120,6 +118,10 @@ namespace Jackout.Logic {
 
 					/* apartment door is locked */
 					aptRoomEntryDoor.GetComponent<Interaction.ObjectRotateable>().Disable();
+					break;
+				case Shared.State.Ending:
+					cameraRig.transform.position = endCube.transform.position;
+					cameraRig.transform.rotation = Quaternion.Euler(0, 0, 0);
 					break;
 			}
 		}

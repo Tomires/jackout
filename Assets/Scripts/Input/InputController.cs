@@ -83,9 +83,7 @@ namespace Jackout.Input {
 			}
 
 			if(actionInteract && grabPossible && !objectGrabbed) {
-				foreach(Renderer r in GetComponentsInChildren<Renderer>()) {
-					r.enabled = false;
-				}
+				HideController();
 				grabbedObject.GetComponent<Interaction.ObjectGrabbable>().attachToController(gameObject);
 				globalAudio.clip = grabSound;
 				globalAudio.Play();
@@ -93,9 +91,7 @@ namespace Jackout.Input {
 			}
 			else if(actionRelease && objectGrabbed) {
 				grabbedObject.GetComponent<Interaction.ObjectGrabbable>().returnToInitialLocation();
-				foreach(Renderer r in GetComponentsInChildren<Renderer>()) {
-					r.enabled = true;
-				}
+				ShowController();
 				globalAudio.clip = dropSound;
 				globalAudio.Play();
 				objectGrabbed = false;
@@ -113,10 +109,12 @@ namespace Jackout.Input {
 			}
 			else if(actionInteract && joystickPossible) {
 				joystickObject.GetComponent<Interaction.JoystickInteraction>().Grabbed(gameObject);
+				HideController();
 				joystickUsed = true;
 			}
 			else if(actionRelease && joystickUsed) {
 				joystickObject.GetComponent<Interaction.JoystickInteraction>().Dropped();
+				ShowController();
 				joystickUsed = false;
 			}
 
@@ -157,6 +155,18 @@ namespace Jackout.Input {
 			grabPossible = false;
 			rotatePossible = false;
 			pushPossible = false;
+		}
+
+		private void ShowController() {
+			foreach(Renderer r in GetComponentsInChildren<Renderer>()) {
+					r.enabled = true;
+			}
+		}
+
+		private void HideController() {
+			foreach(Renderer r in GetComponentsInChildren<Renderer>()) {
+					r.enabled = true;
+			}
 		}
 
 		private void AnimateControllerModel() {

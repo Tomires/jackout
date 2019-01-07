@@ -165,7 +165,7 @@ namespace Jackout.Input {
 
 		private void HideController() {
 			foreach(Renderer r in GetComponentsInChildren<Renderer>()) {
-					r.enabled = true;
+					r.enabled = false;
 			}
 		}
 

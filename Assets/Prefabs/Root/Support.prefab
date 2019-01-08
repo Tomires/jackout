@@ -11658,6 +11658,8 @@ MonoBehaviour:
   computerCamera: {fileID: 0}
   computerStatic: {fileID: 0}
   telephone: {fileID: 0}
+  cameraRig: {fileID: 1240979991645618}
+  endCube: {fileID: 621023036}
   currentState: 0
 --- !u!1 &1333072642524034
 GameObject:

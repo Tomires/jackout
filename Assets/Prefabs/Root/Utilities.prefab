@@ -21155,9 +21155,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 847508673244818348}
   electricSwitch: {fileID: 8300000, guid: c85d12865515ea643b3c59af5ae80832, type: 3}
+  doorUnlock: {fileID: 0}
   puzzleButtons:
   - {fileID: 177704999}
   - {fileID: 1706216913}
+  door: {fileID: 0}
   stateControl: {fileID: 0}
 --- !u!82 &847508673244818348
 AudioSource:
@@ -30719,7 +30721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4614944bbb1fd042a3f798f22896267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationEnabled: 1
+  rotationEnabled: 0
   rotationAxis: 1
   allowedPositiveOffset: 270
   allowedNegativeOffset: -180
@@ -30928,6 +30930,7 @@ GameObject:
   - component: {fileID: 529897367}
   - component: {fileID: 529897366}
   - component: {fileID: 7409507604108080257}
+  - component: {fileID: 1151202341}
   m_Layer: 0
   m_Name: ElectricalBoxOpener
   m_TagString: Untagged
@@ -30942,14 +30945,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662260305069252}
-  m_LocalRotation: {x: 0.68279904, y: 0.18306963, z: -0.1829551, w: 0.6832265}
+  m_LocalRotation: {x: 0.68304145, y: 0.18290548, z: -0.18290548, w: 0.68304145}
   m_LocalPosition: {x: 7.0625, y: 1.0579, z: -22.8199}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4863958607943364}
   m_Father: {fileID: 4078511970046788}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 89.97201, y: 0, z: -29.982002}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -29.982002}
 --- !u!65 &529897367
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30978,7 +30981,7 @@ MonoBehaviour:
   grabbed: 0
   dopplegangerMaterial: {fileID: 2100000, guid: a535fa98713a3804697a5681243bed9c,
     type: 2}
-  grabBehaviour: {fileID: 0}
+  grabBehaviour: {fileID: 1151202341}
 --- !u!54 &7409507604108080257
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30995,6 +30998,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1151202341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662260305069252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d3c8c1acf24074190508d0d1f1fb8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  electricBoxDoor: {fileID: 1592322649692594}
+  electricBoxKeyhole: {fileID: 1918960349452658}
+  electricBoxControl: {fileID: 1008472591576291806}
+  holePositionOffset: {x: 0, y: 0, z: 0}
+  holeRotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1668572741815862
 GameObject:
   m_ObjectHideFlags: 0
@@ -31169,7 +31189,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &4863958607943364
 Transform:
@@ -31178,13 +31198,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717144865302946}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.0000000372529, y: -0.00000018998978, z: 1, w: 0.000000052154057}
+  m_LocalPosition: {x: 0.032512985, y: 0.11168246, z: 0.000000037252903}
   m_LocalScale: {x: 0.01, y: 0.1, z: 0.01}
   m_Children: []
   m_Father: {fileID: 4900085348204050}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180.00002}
 --- !u!114 &114986440247161274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38669,9 +38689,11 @@ MonoBehaviour:
     areaError: 15
   asset_guid: 
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 
-  m_SelectedEdges: []
-  m_selectedTriangles: 
+  m_selectedFaces: 00000000
+  m_SelectedEdges:
+  - x: 0
+    y: 1
+  m_selectedTriangles: 0000000001000000
 --- !u!1 &1777808203368650
 GameObject:
   m_ObjectHideFlags: 0
@@ -42930,9 +42952,25 @@ MonoBehaviour:
     areaError: 15
   asset_guid: 
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 
-  m_SelectedEdges: []
-  m_selectedTriangles: 
+  m_selectedFaces: 00000000
+  m_SelectedEdges:
+  - x: 0
+    y: 0
+  - x: 0
+    y: 0
+  - x: 0
+    y: 0
+  - x: 0
+    y: 0
+  - x: 0
+    y: 0
+  - x: 0
+    y: 0
+  - x: 0
+    y: 0
+  - x: 0
+    y: 0
+  m_selectedTriangles: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!82 &1907437395564196
 AudioSource:
   m_ObjectHideFlags: 0

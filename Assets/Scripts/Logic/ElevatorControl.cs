@@ -14,6 +14,7 @@ namespace Jackout.Logic {
 		private float animationStep;
 		private bool inMotion = false;
 		private bool currentlyOnUpperFloor = false;
+		private bool audioTriggered = false;
 
 		void Setup () {
 			animationStep = timeToReachDestination;
@@ -21,9 +22,10 @@ namespace Jackout.Logic {
 
 		void Update () {
 			if(inMotion) {
-				if(animationStep > (elevatorDoor1.openingTime + 0.5f) && !audioSource.isPlaying) {
+				if(animationStep > (elevatorDoor1.openingTime + 0.5f) && !audioTriggered) {
 					audioSource.clip = audioElevatorEngine;
 					audioSource.Play();
+					audioTriggered = true;
 				}
 				else if(animationStep > (timeToReachDestination - 0.5f)) {
 					elevatorDoor1.Switch(true);
@@ -43,6 +45,7 @@ namespace Jackout.Logic {
 
 			currentlyOnUpperFloor = upperFloor;
 			inMotion = true;
+			audioTriggered = false;
 			animationStep = 0.0f;
 
 			if(upperFloor) {

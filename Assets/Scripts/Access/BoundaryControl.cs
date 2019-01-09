@@ -14,7 +14,7 @@ namespace Jackout.Access {
 		}
 
 		private void OnCollisionEnter(Collision col) {
-			Debug.Log(col.gameObject.tag);
+			//Debug.Log(col.gameObject.tag);
 			if(col.gameObject.CompareTag("Access")) {
 				TBCameraRig.instance.nearClipPlane = 0.1f;
 				TBCameraRig.instance.farClipPlane = 0.2f;

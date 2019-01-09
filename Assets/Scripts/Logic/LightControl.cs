@@ -20,10 +20,10 @@ namespace Jackout.Logic {
 			lightOn = on;
 			Material material;
 			if(lightOn) {
-				material = offMaterial;
+				material = onMaterial;
 			}
 			else {
-				material = onMaterial;
+				material = offMaterial;
 			}
 
 			gameObject.GetComponent<Renderer>().material = material;

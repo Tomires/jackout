@@ -10,7 +10,7 @@ namespace Jackout.Logic {
 		public GameObject stationGate1, stationGate2, stationLight1, stationLight2, stationIntercom;
 		public GameObject computerCamera, computerStatic;
 		public Interaction.PhoneGrab telephone;
-		public GameObject cameraRig, endCube;
+		public GameObject cameraRig, controllerLeft, controllerRight, endCube;
 		public Shared.State currentState = Shared.State.Initial;
 
 		void Start () {
@@ -122,6 +122,8 @@ namespace Jackout.Logic {
 				case Shared.State.Ending:
 					cameraRig.transform.position = endCube.transform.position;
 					cameraRig.transform.rotation = Quaternion.Euler(0, 0, 0);
+					controllerLeft.SetActive(true);
+					controllerRight.SetActive(true);
 					break;
 			}
 		}

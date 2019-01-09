@@ -16,7 +16,7 @@ PlayerSettings:
   productName: Jackout
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.04705883, g: 0.09019608, b: 0.09411766, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.050980397, g: 0.09019608, b: 0.09411766, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
@@ -40,7 +40,7 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos: []
-  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 099467970f71b2d4ebb79b769a0d31fb,
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 1326fba1dbcc6564c953c080fde04eb2,
     type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
@@ -657,10 +657,44 @@ PlayerSettings:
   metroCertificateNotAfter: 80b7e4e7d2c4d501
   metroApplicationDescription: Template_3D
   wsaImages:
-    65636: Assets/Textures/Promo/iconsmall.png
-    65936: Assets/Textures/Promo/icon.png
-    2228324: Assets/Textures/Promo/banner.png
-    2293860: Assets/Textures/Promo/bannerwide.png
+    65636: Assets/Textures/Promo/icons/icon50.png
+    65661: Assets/Textures/Promo/icons/icon63.png
+    65676: Assets/Textures/Promo/icons/icon70.png
+    65686: Assets/Textures/Promo/icons/icon75.png
+    65716: Assets/Textures/Promo/icons/icon90.png
+    65736: Assets/Textures/Promo/icons/icon100.png
+    65776: Assets/Textures/Promo/icons/icon120.png
+    65936: Assets/Textures/Promo/icons/icon200.png
+    2031632: Assets/Textures/Promo/square44/square16.png
+    2031640: Assets/Textures/Promo/square44/square24.png
+    2031648: Assets/Textures/Promo/square44/square32.png
+    2031664: Assets/Textures/Promo/square44/square48.png
+    2031716: Assets/Textures/Promo/square44/square44.png
+    2031741: Assets/Textures/Promo/square44/square55.png
+    2031766: Assets/Textures/Promo/square44/square66.png
+    2031816: Assets/Textures/Promo/square44/square88.png
+    2031872: Assets/Textures/Promo/square44/square256.png
+    2032016: Assets/Textures/Promo/square44/square176.png
+    2097252: Assets/Textures/Promo/square71/square71.png
+    2097277: Assets/Textures/Promo/square71/square89.png
+    2097302: Assets/Textures/Promo/square71/square107.png
+    2097352: Assets/Textures/Promo/square71/square142.png
+    2097552: Assets/Textures/Promo/square71/square284.png
+    2162788: Assets/Textures/Promo/square150/square150.png
+    2162813: Assets/Textures/Promo/square150/square188.png
+    2162838: Assets/Textures/Promo/square150/square225.png
+    2162888: Assets/Textures/Promo/square150/square300.png
+    2163088: Assets/Textures/Promo/square150/square600.png
+    2228324: Assets/Textures/Promo/square310/square310.png
+    2228349: Assets/Textures/Promo/square310/square388.png
+    2228374: Assets/Textures/Promo/square310/square465.png
+    2228424: Assets/Textures/Promo/square310/square620.png
+    2228624: Assets/Textures/Promo/square310/square1240.png
+    2293860: Assets/Textures/Promo/wide/wide310.png
+    2293885: Assets/Textures/Promo/wide/wide388.png
+    2293910: Assets/Textures/Promo/wide/wide465.png
+    2293960: Assets/Textures/Promo/wide/wide620.png
+    2294160: Assets/Textures/Promo/wide/wide1240.png
   metroTileShortName: Jackout
   metroTileShowName: 0
   metroMediumTileShowName: 0
@@ -670,7 +704,7 @@ PlayerSettings:
   metroLastRequiredScene: 0
   metroDefaultTileSize: 1
   metroTileForegroundText: 2
-  metroTileBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21568628, a: 0}
+  metroTileBackgroundColor: {r: 0.050980397, g: 0.09019608, b: 0.09411766, a: 0}
   metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628,
     a: 1}
   metroSplashScreenUseBackgroundColor: 0
@@ -775,7 +809,7 @@ PlayerSettings:
   facebookStatus: 1
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 6
   cloudProjectId: 3ff9bd20-9fbd-4aa8-8f21-074238d52c09
   framebufferDepthMemorylessMode: 0
   projectName: hry-git-template

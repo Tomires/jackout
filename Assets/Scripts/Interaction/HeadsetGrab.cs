@@ -14,18 +14,22 @@ namespace Jackout.Interaction {
 
         public override void Dropped() {
             if(headsetOnHead) {
+                Debug.Log("STATE");
                 stateControl.ChangeState(Shared.State.Ending);
             }
         }
 
         private void OnTriggerEnter(Collider col) {
             if(col.gameObject == cameraRig) {
+                Debug.Log("ENTER");
                 headsetOnHead = true;
             }
         }
 
         private void OnTriggerExit(Collider col) {
             if(col.gameObject == cameraRig) {
+
+                Debug.Log("EXIT");
                 headsetOnHead = false;
             }
         }

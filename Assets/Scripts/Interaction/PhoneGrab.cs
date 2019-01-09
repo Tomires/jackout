@@ -20,6 +20,7 @@ namespace Jackout.Interaction {
                 callAnswered = true;
                 audioSource.loop = false;
                 audioSource.clip = audioCall;
+                audioSource.maxDistance = 1.0f;
                 audioSource.Play();
             }
         }

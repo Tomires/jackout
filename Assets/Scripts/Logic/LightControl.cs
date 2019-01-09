@@ -7,10 +7,12 @@ namespace Jackout.Logic {
 		public bool lightOn = false;
 		public Material onMaterial;
 		public Material offMaterial;
+		public Light lightComponent;
 
 		void Start () {
 			if(!lightOn) {
 				gameObject.GetComponent<Renderer>().material = offMaterial;
+				lightComponent.enabled = false;
 			}
 		}
 		
@@ -25,6 +27,7 @@ namespace Jackout.Logic {
 			}
 
 			gameObject.GetComponent<Renderer>().material = material;
+			lightComponent.enabled = on;
 		}
 	}
 }

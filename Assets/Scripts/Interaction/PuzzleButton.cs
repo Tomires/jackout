@@ -21,7 +21,7 @@ namespace Jackout.Interaction {
 			}
 
 			UpdateSprite();
-			puzzleControl.CheckButtonStates();
+			puzzleControl.CheckButtonStates(this);
 		}
 
 		private void UpdateSprite() {

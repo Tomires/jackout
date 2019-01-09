@@ -19,7 +19,7 @@ namespace Jackout.Logic {
             }
         }
 
-        public override void CheckButtonStates() {
+        public override void CheckButtonStates(Interaction.PuzzleButton button) {
             /* 42 -> turn on camera */
             if(puzzleButtons[0].currentIcon == 5 &&
 			    puzzleButtons[1].currentIcon == 0) {

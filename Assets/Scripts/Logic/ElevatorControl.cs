@@ -26,6 +26,14 @@ namespace Jackout.Logic {
 					audioSource.clip = audioElevatorEngine;
 					audioSource.Play();
 					audioTriggered = true;
+
+					/* since the player doesn't see outside, change scene */
+					if(currentlyOnUpperFloor) {
+						stateControl.ChangeState(Shared.State.AptArrivedUpperFloor);
+					}
+					else {
+						stateControl.ChangeState(Shared.State.AptArrivedLowerFloor);
+					}
 				}
 				else if(animationStep > (timeToReachDestination - 0.5f)) {
 					elevatorDoor1.Switch(true);
@@ -48,18 +56,11 @@ namespace Jackout.Logic {
 			audioTriggered = false;
 			animationStep = 0.0f;
 
-			if(upperFloor) {
-				stateControl.ChangeState(Shared.State.AptArrivedUpperFloor);
-			}
-			else {
-				stateControl.ChangeState(Shared.State.AptArrivedLowerFloor);
-			}
-
 			elevatorDoor1.Switch(false);
 			elevatorDoor2.Switch(false);
 		}
 
-		public override void CheckButtonStates() {
+		public override void CheckButtonStates(Interaction.PuzzleButton button) {
 			/* if we reach a specific combination, unlock button for second floor */
 			if(puzzleButtons[0].currentIcon == 0 &&
 				puzzleButtons[1].currentIcon == 1 &&

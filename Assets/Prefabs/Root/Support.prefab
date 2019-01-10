@@ -5414,8 +5414,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 19.996061, y: 0.07405499, z: 16.634731}
-  m_Center: {x: -0.8849868, y: 1.4629744, z: -2.097458}
+  m_Size: {x: 2, y: 1.5, z: 2}
+  m_Center: {x: 0.000000029802322, y: 0.75, z: -1}
 --- !u!1 &652880131
 GameObject:
   m_ObjectHideFlags: 0
@@ -16781,7 +16781,7 @@ MonoBehaviour:
   globalAudio: {fileID: 82420813265068194}
   grabSound: {fileID: 8300000, guid: dd055ea1f9b00e545872ea301b8364d9, type: 3}
   dropSound: {fileID: 8300000, guid: 84c2664be50f4ad47ad7d81d1c41d897, type: 3}
-  rumbleIntensity: 0
+  rumbleIntensity: 0.2
 --- !u!114 &114716109731271430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25010,7 +25010,7 @@ MonoBehaviour:
   globalAudio: {fileID: 82420813265068194}
   grabSound: {fileID: 8300000, guid: dd055ea1f9b00e545872ea301b8364d9, type: 3}
   dropSound: {fileID: 8300000, guid: 84c2664be50f4ad47ad7d81d1c41d897, type: 3}
-  rumbleIntensity: 0
+  rumbleIntensity: 0.2
 --- !u!114 &114470070726134438
 MonoBehaviour:
   m_ObjectHideFlags: 0

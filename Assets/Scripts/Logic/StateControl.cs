@@ -35,13 +35,13 @@ namespace Jackout.Logic {
 
 					/* front area of station is accessible */
 					movementStationTicket.SetActive(true);
-					colliderStationTicket.SetActive(true);
+					colliderStationTicket.SetActive(false);
 					break;
 
 				case Shared.State.StationBarrierOpen:
 					/* area behind ticket barriers is accessible */
 					movementStationInside.SetActive(true);
-					colliderStationInside.SetActive(true);
+					colliderStationInside.SetActive(false);
 					break;
 
 				case Shared.State.ElectricalBox2:
@@ -53,7 +53,7 @@ namespace Jackout.Logic {
 				case Shared.State.ElevatorCalled:
 					/* inside of elevator is accessible */
 					movementElevator.SetActive(true);
-					colliderElevator.SetActive(true);
+					colliderElevator.SetActive(false);
 					break;
 
 				case Shared.State.AptArrivedUpperFloor:
@@ -71,8 +71,8 @@ namespace Jackout.Logic {
 					movementOutside.SetActive(false);
 					movementPhoneBooth.SetActive(false);
 					movementApartmentInside.SetActive(true);
-					colliderOutside.SetActive(false);
-					colliderApartmentInside.SetActive(true);
+					colliderOutside.SetActive(true);
+					colliderApartmentInside.SetActive(false);
 					break;
 				case Shared.State.AptArrivedLowerFloor:
 					/* apartment door is locked */
@@ -89,8 +89,8 @@ namespace Jackout.Logic {
 					movementOutside.SetActive(true);
 					movementPhoneBooth.SetActive(true);
 					movementApartmentInside.SetActive(false);
-					colliderOutside.SetActive(true);
-					colliderApartmentInside.SetActive(false);
+					colliderOutside.SetActive(false);
+					colliderApartmentInside.SetActive(true);
 					break;
 
 				case Shared.State.Initial:
@@ -108,13 +108,13 @@ namespace Jackout.Logic {
 					/* no station area is accessible */
 					movementStationTicket.SetActive(false);
 					movementStationInside.SetActive(false);
-					colliderStationTicket.SetActive(false);
-					colliderStationInside.SetActive(false);
+					colliderStationTicket.SetActive(true);
+					colliderStationInside.SetActive(true);
 
 					/* outside is accessible */
 					movementOutside.SetActive(true);
 					movementPhoneBooth.SetActive(true);
-					colliderOutside.SetActive(true);
+					colliderOutside.SetActive(false);
 
 					/* apartment door is locked */
 					aptRoomEntryDoor.GetComponent<Interaction.ObjectRotateable>().Disable();

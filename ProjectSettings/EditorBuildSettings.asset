@@ -4,8 +4,4 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Jackout.unity
-    guid: c8e1e8cfab945b54ea03b30a1a3c8d87
-  m_configObjects: {}
+  m_Scenes: []

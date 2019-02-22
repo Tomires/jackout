@@ -278,7 +278,7 @@ PlayerSettings:
   - m_BuildTarget: Metro
     m_Enabled: 0
     m_Devices:
-    - WindowsMR
+    - None
   - m_BuildTarget: N3DS
     m_Enabled: 0
     m_Devices: []
@@ -564,11 +564,11 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   scriptingDefineSymbols:
-    1: TB_STEAM_VR;TB_WINDOWS_MR
-    4: TB_STEAM_VR;TB_WINDOWS_MR
-    7: TB_STEAM_VR;TB_WINDOWS_MR
-    14: TB_STEAM_VR;TB_WINDOWS_MR
-    19: TB_STEAM_VR;TB_WINDOWS_MR
+    1: TB_STEAM_VR
+    4: TB_STEAM_VR
+    7: TB_STEAM_VR
+    14: TB_STEAM_VR
+    19: TB_STEAM_VR
   platformArchitecture: {}
   scriptingBackend:
     Standalone: 0

@@ -128,7 +128,7 @@ namespace Jackout.Input {
 
 		}
 
-		private void OnTriggerEnter(Collider col) {
+		private void OnTriggerStay(Collider col) {
 			bool interactable = false;
 
 			if(col.gameObject.GetComponent<Interaction.ObjectGrabbable>() && !col.gameObject.GetComponent<Interaction.ObjectGrabbable>().grabbed) {

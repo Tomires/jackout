@@ -13,6 +13,7 @@ namespace Jackout.Input {
 		public Jackout.Input.TeleportationController teleportationController;
 		public ControllerHand controllerHand;
 		public float joystickThreshold = 0.6f;
+		public float touchpadSwipeThreshold = 0.6f;
 		public float triggerThreshold = 0.7f;
 		public Material interactiveMaterial;
 		public GameObject analogRepresentation, triggerRepresentation;
@@ -38,6 +39,9 @@ namespace Jackout.Input {
 		private bool triggerPushed = false;
 		public float rumbleIntensity = 0.2f;
 		private float rumbleBuffer = 0.0f;
+		private bool useTouchpadInsteadOfJoystick = false;
+		private bool touchpadPrepareForShift = false;
+		private Vector2 touchpadPositionOnTouchStart;
 
 		void Start () {
 			if(controllerHand == ControllerHand.LeftController) {
@@ -48,6 +52,10 @@ namespace Jackout.Input {
 			}
 
 			defaultMaterial = renderer.material;
+
+			if(TBCore.GetActiveHeadset() == VRHeadset.HTCVive) {
+				useTouchpadInsteadOfJoystick = true;
+			}
 		}
 
 		void Update () {
@@ -181,12 +189,10 @@ namespace Jackout.Input {
 			analogRepresentation.transform.localRotation = Quaternion.Euler(-joyPos.y * 30.0f, 180.0f, joyPos.x * 30.0f);
 		}
 
-		private void DetectInputs(out bool actionTeleportation, out bool shiftLeft, out bool shiftRight, out bool actionInteract, out bool actionRelease) {
+		private void DetectJoystickInputs(out bool actionTeleportation, out bool shiftLeft, out bool shiftRight) {
 			actionTeleportation = false;
 			shiftLeft = false;
 			shiftRight = false;
-			actionInteract = false;
-			actionRelease = false;
 
 			/* joystick is pulled toward or away from player -> teleport */
 			Vector2 joystickPosition = TBInput.GetAxis2D(TBInput.Button.Joystick, controller);
@@ -209,6 +215,53 @@ namespace Jackout.Input {
 			}
 			else {
 				shiftInitiated = false;
+			}
+		}
+
+		private void DetectTouchpadInputs(out bool actionTeleportation, out bool shiftLeft, out bool shiftRight) {
+			actionTeleportation = false;
+			shiftLeft = false;
+			shiftRight = false;
+
+			/* on touch start, note current touch position and prepare for shift */
+			Vector2 touchpadPosition = TBInput.GetAxis2D(TBInput.Button.Touchpad, controller);
+			if(TBInput.GetTouchDown(TBInput.Button.Action1, controller)) {
+				touchpadPrepareForShift = true;
+				touchpadPositionOnTouchStart = touchpadPosition;
+			}
+			/* on touchpad release, check whether shift flag is still up and whether minimum threshold is met */
+			else if(TBInput.GetTouchUp(TBInput.Button.Action1, controller) && touchpadPrepareForShift) {
+				touchpadPrepareForShift = false;
+				if(Mathf.Abs(touchpadPosition.x - touchpadPositionOnTouchStart.x) > touchpadSwipeThreshold) {
+					if(touchpadPosition.x < touchpadPositionOnTouchStart.x) {
+						shiftLeft = true;
+					}
+					else {
+						shiftRight = true;
+					}
+				}
+			}
+			/* when button is clicked, initiate teleport and cancel shift */
+			if(TBInput.GetButton(TBInput.Button.Action1, controller)) {
+				touchpadPrepareForShift = false;
+				actionTeleportation = true;
+			}
+
+		}
+
+		private void DetectInputs(out bool actionTeleportation, out bool shiftLeft, out bool shiftRight, out bool actionInteract, out bool actionRelease) {
+			actionTeleportation = false;
+			shiftLeft = false;
+			shiftRight = false;
+			actionInteract = false;
+			actionRelease = false;
+
+			/* check whether we prefer to use a touchpad or joystick with current controller configuration */
+			if(useTouchpadInsteadOfJoystick) {
+				DetectTouchpadInputs(out actionTeleportation, out shiftLeft, out shiftRight);
+			}
+			else {
+				DetectJoystickInputs(out actionTeleportation, out shiftLeft, out shiftRight);
 			}
 
 			/* trigger is pressed -> interact with object */

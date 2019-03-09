@@ -9,6 +9,7 @@ namespace Jackout.Input {
 		public string teleportLayerName = "TeleportBoundary";
 		public float shiftIncrement = 45.0f;
 		public Vector3 teleportationOffset;
+		public bool makeWarpInstant = true;
 		private Vector3 teleportTarget;
 		private bool teleportationAllowed = true;
 		private bool warpingNow = false;
@@ -21,8 +22,16 @@ namespace Jackout.Input {
 			if(warpingNow && animationStep < 1.0f) {
 				Vector3 target = teleportTarget;
 				target.y = cameraRig.transform.position.y; /* do not change Y position */
-				cameraRig.transform.position = Vector3.Lerp(cameraRig.transform.position, target, Jackout.Shared.LerpSin(animationStep));
-				animationStep += Time.deltaTime;
+
+				if(makeWarpInstant) {
+					cameraRig.transform.position = target;
+					warpingNow = false;
+					animationStep = 0.0f;
+				}
+				else {
+					cameraRig.transform.position = Vector3.Lerp(cameraRig.transform.position, target, Jackout.Shared.LerpSin(animationStep));
+					animationStep += Time.deltaTime;
+				}
 			}
 			else {
 				animationStep = 0.0f;

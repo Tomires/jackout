@@ -14,7 +14,10 @@ A short virtual reality puzzle game set in a cyberpunk world.
 2. Open folder as a Unity project.
 3. Install SteamVR from provided Unity package.
 4. Install ProBuilder 2.x from Asset Store using link provided.
-5. From Unity's toolbar, select *TButt -> Core Settings* and then click *Save All Settings*
+5. From Unity's toolbar, select *TButt -> Core Settings* and then click *Save All Settings*.
+6. Discard all changes that Unity made to files tracked by version control (mostly applicable to *ProjectSettings* files).
+7. Using Unity's Project window, navigate to *Assets/Scenes* and open the *Jackout* scene.
+8. *File -> Build Settings -> Build*
 
 ## Troubleshooting
 

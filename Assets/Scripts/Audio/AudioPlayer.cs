@@ -29,6 +29,9 @@ namespace Jackout.Audio {
                     if(loop) {
                         timeToPlay[i] = timeouts[i];
                     }
+                    else {
+                        timeToPlay[i] = int.MaxValue;
+                    }
                     audioSource.clip = audioClips[i];
                     audioSource.Play();
                 }
